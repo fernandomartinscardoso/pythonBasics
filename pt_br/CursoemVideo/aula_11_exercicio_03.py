@@ -1,0 +1,10 @@
+from math import sin, cos, tan, pi, radians
+print('\033[35mCálculo de seno, cosseno e tangente de um ângulo em graus\033[m\n')
+grau = float(input('Digite o valor do ângulo em graus: '))
+ang = radians(grau)
+seno = sin(ang)
+cosseno = cos(ang)
+tangente = tan(ang)
+print('\033[36m='*18)
+print('\033[31msen({}°)={:.3f} \n\033[33mcos({}°)={:.3f} \n\033[34mtg({}°)={:.3f}'.format(grau, seno, grau, cosseno, grau, tangente))
+print('\033[36m='*18)
