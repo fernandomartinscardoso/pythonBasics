@@ -17,11 +17,16 @@ while n <= 0:
    print('Entrada inválida. Tente novamente.')
    n = int(input('Digite um número inteiro positivo: '))
 
-i = 1
 f = s0 + s1
-while i <= n:
-   i = i + f
-   fs = str(i)
+while f <= n:
+   fs = str(f)
    fib = fib + ' ' + fs
+   s0 = s1
+   s1 = f
+   f = s0 + s1
+   #fs = str(f)
+   #fib = fib + ' ' + fs
 
+fs = str(f)
+fib = fib + ' ' + fs
 print(fib) 
