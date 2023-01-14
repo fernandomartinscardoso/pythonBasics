@@ -7,3 +7,12 @@ print('#                         Triângulo de Floyd                        #'.u
 print('#    Linha 1: 1; linha 2: 2 3; linha 3: 4 5 6; linha 4: 7 8 9 10    #')
 print('###'*23)
 
+n = int(input("Quantas linhas você deseja plotar do Triângulo de Floyd?\n"))
+
+linha = 1
+valor = 1
+elementos = []
+
+while linha <= n:
+    
+
