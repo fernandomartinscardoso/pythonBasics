@@ -11,8 +11,19 @@ n = int(input("Quantas linhas você deseja plotar do Triângulo de Floyd?\n"))
 
 linha = 1
 valor = 1
-elementos = []
+
+elementos = " "
+for c in range(valor, n):
+    elementos = elementos + str(c) + " "
+    print(elementos)
+    elementos = " "
 
 while linha <= n:
-    
+    elementos = " "
+    for c in range(valor, valor+linha):
+        elementos = elementos + str(c) + " "
+        print(elementos)
+    linha = linha + 1
+    valor = linha
+
 
