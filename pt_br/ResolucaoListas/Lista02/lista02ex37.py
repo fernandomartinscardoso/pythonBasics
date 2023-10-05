@@ -21,6 +21,14 @@ ts = hs*60+ms
 
 tp = ts-tc
 
+if tp < 0:
+    tc = 1440 - tc
+    tp = tc + ts
+
 if tp <= 120:
     print('Tarifa: R$ 1,00')
-    elif
+elif tp > 120 and tp <= 240:
+    print('Tarifa: R$ 1,40')
+else:
+    print('Tarifa: R$ 2,00')
+    
