@@ -9,21 +9,11 @@ print('###'*23)
 
 n = int(input("Quantas linhas você deseja plotar do Triângulo de Floyd?\n"))
 
-linha = 1
 valor = 1
 
-elementos = " "
-for c in range(valor, n):
-    elementos = elementos + str(c) + " "
-    print(elementos)
+for b in range(1,n+1):
     elementos = " "
-
-while linha <= n:
-    elementos = " "
-    for c in range(valor, valor+linha):
+    for c in range(valor, valor+b):
         elementos = elementos + str(c) + " "
-        print(elementos)
-    linha = linha + 1
-    valor = linha
-
-
+        valor = valor + 1
+    print(elementos)

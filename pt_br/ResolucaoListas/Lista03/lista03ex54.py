@@ -7,20 +7,19 @@ print('#                      Detector de número primo                     #'.u
 print('#    Recebe um número inteiro maior que 1 e testa se ele é primo    #')
 print('###'*23)
 
-n = int(input("Digite um número inteiro maior que 1:"))
+n = int(input("Digite um número inteiro maior que 1: "))
 while n <= 1:
     print("Número inválido. Tente novamente!")
-    n = int(input("Digite um número inteiro maior que 1:"))
+    n = int(input("Digite um número inteiro maior que 1: "))
 
-teste = n//2
-cont = 1
+primo = True
 
-while cont <= teste:
-    cont = cont + 1
-    if n % cont == 0:
-        print("{} não é um número primo".format(n))
+for i in range(2,n):
+    if n % i == 0:
+        primo = False
         break
-    if cont > teste:
-        print("{} é um número primo".format(n))
 
-
+if primo == True:
+    print('O número {} é primo'.format(n))
+else:
+    print('O número {} não é primo'.format(n))
