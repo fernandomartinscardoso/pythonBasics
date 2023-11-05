@@ -13,8 +13,9 @@ while n <= 1:
     n = int(input("Digite um número inteiro maior que 1: "))
 
 primo = True
+parada = int(n**(0.5)) + 1
 
-for i in range(2,n):
+for i in range(2,parada):
     if n % i == 0:
         primo = False
         break
