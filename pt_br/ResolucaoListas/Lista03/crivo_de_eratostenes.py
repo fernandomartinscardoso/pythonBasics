@@ -49,8 +49,25 @@ for k in range(2,n):
     if lista[k] == True:
         primos.append(k)
 
-# print('\nOs números primos menores que {} são: \n{}'.format(n,primos))
+print('\nOs números primos menores que {} são: \n{}'.format(n,primos))
 
 arquivo = open("numeros_primos.txt",'w')
 arquivo.write("Os números primos menores que {} são: \n{}".format(n,primos))
 arquivo.close()
+
+# Espirais dos números primos: https://jaketae.github.io/study/prime-spirals/
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = []
+y = []
+for l in range(len(primos)):
+    x.append(primos[l]*np.cos(primos[l]))
+    y.append(primos[l]*np.sin(primos[l]))
+
+plt.style.use('dark_background')
+plt.figure(figsize=(10, 10))
+plt.axis("off")
+plt.scatter(x, y, s=0.5)
+plt.show()
