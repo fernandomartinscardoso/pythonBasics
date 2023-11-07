@@ -8,4 +8,49 @@ Para encontrar todos os números primos de 2 até n pelo método de Eratóstenes
 
 Como refinamento da busca, é suficiente marcar os números no passo 3 a partir de p**2, já que os menores múltiplos de p já estarão marcados.
 Isso significa que o algoritmo pode terminar no passo 4 quando p**2 é maior que n.
+
+algorithm Sieve of Eratosthenes is
+    input: an integer n > 1.
+    output: all prime numbers from 2 through n.
+
+    let A be an array of Boolean values, indexed by integers 2 to n,
+    initially all set to true.
+    
+    for i = 2, 3, 4, ..., not exceeding sqrt(n) do
+        if A[i] is true
+            for j = i^2, i^2+i, i^2+2i, i^2+3i, ..., not exceeding n do
+                set A[j] := false
+
+    return all i such that A[i] is true.
 '''
+
+print('###'*23)
+print('#                      Detector de número primo                     #'.upper())
+print('#       Detectando primos de 2 a n pelo método de Eratóstenes       #')
+print('###'*23)
+
+n = int(input("Digite o limite superior n do intervalo: \n"))
+while n <= 2:
+    print("Número inválido. Tente novamente!")
+    n = int(input("Digite o limite superior n do intervalo: \n"))
+
+lista = []
+for a in range(0, n):
+    lista.append(True)
+
+parada = int(n**0.5)+1
+for i in range(2,parada):
+    if lista[i] == True:
+        for j in range(i**2,n,i):
+            lista[j] = False
+
+primos = []
+for k in range(2,n):
+    if lista[k] == True:
+        primos.append(k)
+
+# print('\nOs números primos menores que {} são: \n{}'.format(n,primos))
+
+arquivo = open("numeros_primos.txt",'w')
+arquivo.write("Os números primos menores que {} são: \n{}".format(n,primos))
+arquivo.close()
