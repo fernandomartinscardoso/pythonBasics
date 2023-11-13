@@ -1,16 +1,16 @@
 """Gabarito da Lista 3 - Comandos de Repetição
-   Exercício 55
+   Exercício 56
    Programador: Fernando Martins Cardoso
 """
 print('###'*23)
 print('#                     Somador de números primos                     #'.upper())
-print('#                Soma dos n primeiros números primos                #')
+print('#               Soma dos números primos menores que n               #')
 print('###'*23)
 
-n = int(input("Digite quantos números primos você gostaria de somar: "))
-while n < 2:
+n = int(input("Digite o valor de n: "))
+while n <= 2:
     print("Número inválido. Tente novamente!")
-    n = int(input("Digite quantos números primos você gostaria de somar: "))
+    n = int(input("Digite o valor de n: "))
 
 def primo(p):
     primo = True
@@ -22,12 +22,10 @@ def primo(p):
     return primo
 
 numero = 2
-cont = 1
 soma = 0
-while cont <= n:
+while numero <= n:
     if primo(numero) == True:
         soma = soma + numero
-        cont = cont + 1
     numero = numero + 1 
 
-print('A soma dos {} primeiros primos é igual a {}.'.format(n,soma))
+print('A soma dos números primos menores que {} é igual a {}.'.format(n,soma))
