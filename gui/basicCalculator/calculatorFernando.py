@@ -4,7 +4,7 @@ window = Tk()
 window.geometry("350x500")
 window.title("Calculator")
 window.configure(bg="#499e3e")
-window.iconbitmap("calculator_icon.ico")
+# window.iconbitmap("calculator_icon.ico")  # Not suitable for Linux enviroment. Check https://www.reddit.com/r/Tkinter/comments/zpwwm1/tkintertclerror_bitmap_myownico_not_defined/?rdt=37975
 
 expression = ''
 def press(n):
