@@ -3,7 +3,9 @@
 This repository contains my study material based on the course provided by [Adam McQuistan](https://www.udemy.com/course/building-python-cli-apps-with-click/).
 
 If using VSCode, start virtual environment:
+
 `$ python3 -m venv venv`
+
 `$ source venv/bin/activate`
 
 ## Example 1: The Greeter
