@@ -42,7 +42,7 @@ You can add options to you CLI by using the annotation `@click.option('--<opt-na
 
 Click expects the dashes in the option names to be replaced with underscores in the function parameters. So, `<opt-name>` at `click.option` would become ``<opt_name>` in the function parameters.
 
-In __calculator.py__ is described the option to add verbose in your CLI. In case you want to add stack verbosity, the McQuistan original files contain this implementation [here](/originalMcQuistanFiles/07-options-ints-and-bools.zip).
+In __calculator.py__ is described the option to add verbose in your CLI. In case you want to add stack verbosity, the McQuistan original files contain this implementation [here](cli/originalMcQuistanFiles/07-options-ints-and-bools.zip).
 
 ## Example 3: The Authenticator
 
