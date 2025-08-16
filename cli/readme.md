@@ -42,8 +42,10 @@ You can add options to you CLI by using the annotation `@click.option('--<opt-na
 
 Click expects the dashes in the option names to be replaced with underscores in the function parameters. So, `<opt-name>` at `click.option` would become ``<opt_name>` in the function parameters.
 
-In __calculator.py__ is described the option to add verbose in your CLI. In case you want to add stack verbosity, the McQuistan original files contain this implementation [here](https://github.com/fernandomartinscardoso/pythonBasics/blob/main/cli/originalMcQuistanFiles/07-options-ints-and-bools.zip).
+In __calculator.py__ is described the option to add verbose in your CLI. The [original McQuistan file for stack verbosity](https://github.com/fernandomartinscardoso/pythonBasics/blob/main/cli/originalMcQuistanFiles/07-options-ints-and-bools.zip) contains an extra implementation for stack verbose display.
 
 ## Example 3: The Authenticator
 
 The command `authenticate` invoked by __authenticate.py__ alows to add users and passwords. For password, we use `hide_input=True` to not show the password as it's typed and `confirmation_prompt=True` to ask for confirmation of the password.
+
+In the class [Prompt Types and User Confirmation](https://github.com/fernandomartinscardoso/pythonBasics/blob/main/cli/originalMcQuistanFiles/10-prompt-ints-and-confirm.zip) McQuistan teach how to use integer as ID to create special confirmation access (for an admin account, for instance).
