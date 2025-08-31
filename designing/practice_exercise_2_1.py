@@ -2,6 +2,11 @@
 # Practice exercise 2.1
 # Student: Fernando Cardoso
 # Date: 31.08.2025
+# Tasks:
+# Make a drawing with the elements presented in the course: rectangles, circles, polygons, eye and star.
+# Identify the ones you like best and choose RGB colors for the fill (fill()) and outline (stroke()), 
+# or use them without fill (no_fill()) or without an outline (no_stroke()), positioning them on the screen 
+# in an interesting composition.
 
 import py5
 
@@ -20,8 +25,14 @@ def setup():
     for i in range(1,8):
         if i <= 4:
             star(98 + i*98, 98, 30, 15, i+3, py5.HALF_PI)
+            star(98, 98 + i*98, 30, 15, i+3, py5.HALF_PI)
+            star(98 + i*98, 882, 30, 15, i+3, py5.HALF_PI)
+            star(882, 98 + i*98, 30, 15, i+3, py5.HALF_PI)
         else:
             star(98 + i*98, 98, 30, 15, 11-i, py5.HALF_PI)
+            star(98, 98 + i*98, 30, 15, 11-i, py5.HALF_PI)
+            star(98 + i*98, 882, 30, 15, 11-i, py5.HALF_PI)
+            star(882, 98 + i*98, 30, 15, 11-i, py5.HALF_PI)
 
 
 
@@ -50,3 +61,4 @@ def star(cx, cy, ra, rb, np, angle=0):
     py5.end_shape(py5.CLOSE)
 
 py5.run_sketch() # Run the sketch to see the setup and draws applied.
+py5.save_frame('practice_exercise_2_1.png') # Save a snapshot of the sketch window as a PNG file.

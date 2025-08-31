@@ -1,7 +1,7 @@
 # Code to study designing using py5 library
 # Based on the Domestika course "Designing with Python: Programming for a Visual Context" by Alexandre Villares
 # This code is for Unit 2, Videos 8 and 9 of the course.
-# Theme: Randomness and infinite loops
+# Theme: Randomness and infinite loops part 1
 
 import py5
 from random import randint, choice, uniform
