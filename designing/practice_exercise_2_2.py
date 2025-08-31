@@ -12,13 +12,17 @@ import py5
 def setup():
     py5.size(980, 980)
     py5.background(128, 200, 128)
+    concentric_circles(3*py5.width/4, py5.height/4, 15, 650)
+    concentric_circles(py5.width/4, py5.height/4, 25, 650)
+    concentric_circles(3*py5.width/4, 3*py5.height/4, 15, 650)
+    concentric_circles(py5.width/4, 3*py5.height/4, 20, 650)
 
 def concentric_circles(x, y, n, d):
-    
+    # Draws n concentric circles centered at (x, y) with a maximum diameter d.
     py5.no_fill()
     py5.stroke(0)
     for i in range(n):
-        py5.circle(x, y, d + i * d)
+        py5.circle(x, y, d - i * d/n)
 
 
 py5.run_sketch() # Run the sketch to see the setup and draws applied.
