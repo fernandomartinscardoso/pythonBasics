@@ -3,9 +3,9 @@
 # Student: Fernando Cardoso
 # Date: 31.08.2025
 # Tasks:
-# Adapt one of the examples from the class "Randomness: infinite options", that is, use a repeat loop to draw a sequence of graphic elements with some type of random variation.
-
-Use the element you created in the "Define and use a new function" task.
+# Adapt one of the examples from the class "Randomness: infinite options", that is, 
+# use a repeat loop to draw a sequence of graphic elements with some type of random variation.
+# Use the element you created in the "Define and use a new function" task.
 
 import py5
 from random import randint
