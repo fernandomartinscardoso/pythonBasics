@@ -49,3 +49,10 @@ In __calculator.py__ is described the option to add verbose in your CLI. The [or
 The command `authenticate` invoked by __authenticate.py__ alows to add users and passwords. For password, we use `hide_input=True` to not show the password as it's typed and `confirmation_prompt=True` to ask for confirmation of the password.
 
 In the class [Prompt Types and User Confirmation](https://github.com/fernandomartinscardoso/pythonBasics/blob/main/cli/originalMcQuistanFiles/10-prompt-ints-and-confirm.zip) McQuistan teach how to use integer as ID to create special confirmation access (for an admin account, for instance).
+
+## Example 4: Files Manipulation
+
+The commands invoked by __fileutils.py__ allow some basic file manipulations. The command `note` writes notes input to a given file, and the command `concat` concatenates the contents of one or more files into a single output file. The file __combined.txt__, for instance, was created with command `concat file1.txt file2.txt file3.txt combined.txt`.
+
+In the application __notes.py__, it is shown how to create nested commands using `@click.group()` class. This code provides a simple CLI to create, delete, add, and update notes to a database, showing the contents, date, and time of modification.
+
