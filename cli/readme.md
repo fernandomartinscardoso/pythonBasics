@@ -54,5 +54,24 @@ In the class [Prompt Types and User Confirmation](https://github.com/fernandomar
 
 The commands invoked by __fileutils.py__ allow some basic file manipulations. The command `note` writes notes input to a given file, and the command `concat` concatenates the contents of one or more files into a single output file. The file __combined.txt__, for instance, was created with command `concat file1.txt file2.txt file3.txt combined.txt`.
 
-In the application __notes.py__, it is shown how to create nested commands using `@click.group()` class. This code provides a simple CLI to create, delete, add, and update notes to a database, showing the contents, date, and time of modification.
+In the application __notes.py__, it is shown how to create nested commands using `@click.group()` class. This code provides a simple CLI to create, delete, add, and update notes to a database, showing the contents, date, and time of modification. The code was also adapt to contain shared context of grouped commands, which simplifies the implementation using object-oriented approach.
 
+## Example 5: Progress Bar
+
+The command `download` invoked by __fileutils.py__ allows to download text files from URLs, and it contains the standard Click progress bar, which is quite useful to check if the download is finished or how much of it is done.
+
+By using the option `click.progressbar(inputs)` directly, the progress bar is only checking iterably how many items were downloaded. By expanding the arguments, you can give more functionalities and see more details on the progress. For example:
+
+`click.progressbar(
+        length=len(inputs),
+        show_eta=False,
+        item_show_func=lambda fname: f"Downloading {fname}"
+    )`
+
+where `length=len(inputs)` specifies the total nuimber of items to process, `show_eta=False` disables the estimated time of arrival, and `item_show_func=lambda fname: f"Downloading {fname}"` shows the current item being processed.
+
+## Style
+
+Using the command `click.style(<message>,options)`, the messages on the prompt can be modified in terms of foreground and background colors, typefaces, and many more, as per [Click Documentation](https://click.palletsprojects.com/en/stable/).
+
+Since this command is commonly grouped with `click.echo()` to show messages, there is also the command `click.secho()` to combine both functionalities. Therefore, e.g, `click.echo(click.style(greetings, fg='green', bold=True, bg='yellow'))` and `click.secho(greetings, fg='green', bold=True, bg='yellow')` are equivalents.

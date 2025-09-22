@@ -2,6 +2,7 @@
 
 import typing # Ensure typing is imported for more advanced type modes
 import click
+import requests
 
 @click.command()
 @click.argument('fo', type=click.File('a')) # 'a' mode for appending
@@ -24,3 +25,26 @@ def concat(inputs: typing.Collection[typing.IO], output: typing.IO):
         for line in fi:
             output.write(line)
         click.echo(f'{fi.name} written to {output.name}.')
+
+@click.command()
+@click.argument('inputs', nargs=-1) # Accept multiple input file paths
+def download(inputs):
+    """Downloads files from given (url, filename) input pairs and saves them locally.
+
+    Example: 
+    
+        download <url1>,<filename1.txt> <url2>,<filename2.txt> ...
+    """
+    with click.progressbar(
+        length=len(inputs), # Total number of items to process
+        show_eta=False, # Disable ETA (Estimated Time of Arrival) display for simplicity
+        item_show_func=lambda fname: f"Downloading {fname}" # Custom function to show the current item being processed
+    ) as bar:
+        for i, item in enumerate(inputs, start=1): # Starting index at 1 to avoid zero-based indexing in display, i.e., message showing "Downloading None"
+            url, filename = item.split(',') # Split each input into URL and filename based on comma
+            response = requests.get(url)
+            with open(filename, 'w') as fo:
+                fo.write(response.text)
+            bar.update(i, filename) # Update the progress bar with the current filename
+    
+    click.echo("All downloads completed.")

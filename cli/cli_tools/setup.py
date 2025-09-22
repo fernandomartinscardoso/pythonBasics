@@ -3,9 +3,10 @@ from setuptools import setup
 setup(
     name='cli_tools',
     version='1.0',
-    py_modules=['greeter', 'calculator', 'authenticate', 'fileutils', 'notes'],
+    py_modules=['greeter', 'calculator', 'authenticate', 'fileutils', 'notes', 'download'],
     install_requires=[
-        'Click'
+        'Click',
+        'requests'
     ],
     entry_points={
         'console_scripts': [
@@ -15,7 +16,8 @@ setup(
             'authenticate=authenticate:auth',
             'note=fileutils:note',
             'concat=fileutils:concat',
-            'notes=notes:main'
+            'notes=notes:main',
+            'download=fileutils:download'
         ]
     }
 )

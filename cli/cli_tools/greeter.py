@@ -34,7 +34,11 @@ def greet(first_name, last_name, lang, say_it): # Click expects the dashes in th
     # Documentation for the greet command, accessible via --help
     """Displays a greeting message to the user."""
     greetings = f"Hello, {first_name} {last_name}! Welcome to our program." if lang == 'en' else f"¡Hola, {first_name} {last_name}! Bienvenido a nuestro programa."
-    for _ in range(say_it):
-        # Using click's echo function instead of print for better compatibility with Click's command line interface
-        click.echo(greetings)
+    colors = ['red', 'green', 'yellow', 'blue', 'magenta', 'cyan']
+    for i in range(say_it):
+        colors_idx = (i*31 + 17) % len(colors)
+        # Using click's echo function instead of print for better compatibility with Click's command line interface:
+        # click.echo(click.style(greetings, fg='green', bold=True, bg='yellow'))
+        # Using click.secho to combine echo and style functionalities:
+        click.secho(greetings, fg=colors[colors_idx], bold=True)
     
