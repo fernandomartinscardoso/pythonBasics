@@ -34,41 +34,41 @@ def save_notes(notes): # Function to save notes to the database file
             fo.write(f"{note}\n")
 
 @click.group() # Invoke as a group to hold multiple commands with order of execution
-def main(): # Defining the method name to be wrapped by the Click group
+@click.pass_context # Pass the context to the command group, addding data to the context object (called obj) if needed
+def main(ctx): # Defining the method name to be wrapped by the Click group
     """Program to manage notes."""
-    pass
-
-# Registering the nested commands with the method defined to the Click group above:
-@main.command() 
-def show():
-    """Shows notes in the database."""
     if not NOTES_DB.parent.exists(): # Check if the parent directory exists. If not, it creates it.
         NOTES_DB.parent.mkdir()
         NOTES_DB.touch() # Create the notes database file if it doesn't exist.
-    notes = load_notes()
+
+    ctx.ensure_object(dict) # Ensure that the context object is a dictionary.
+    ctx.obj["notes"] = load_notes() # Load notes from the database file and store them in the context object.
+
+# Registering the nested commands with the method defined to the Click group above:
+@main.command() 
+@click.pass_context
+def show(ctx):
+    """Shows notes in the database."""
+    notes = ctx.obj["notes"] # Retrieve the notes from the context object.
     print_header()
     for i, note in enumerate(notes, start=1):
         print_note(i, note)
         
 @main.command()
-def add():
+@click.pass_context 
+def add(ctx):
     """Adds a note to the database."""
-    if not NOTES_DB.parent.exists(): # Check if the parent directory exists. If not, it creates it.
-        NOTES_DB.parent.mkdir()
-        NOTES_DB.touch() # Create the notes database file if it doesn't exist.
-    notes = load_notes()
+    notes = ctx.obj["notes"]
     created = datetime.now().isoformat()
     contents = click.prompt("Enter note contents") # Prompt the user to enter the note contents.
     notes.append(f"{created}\t{created}\t{contents}") # Append the new note to the list with created and updated timestamps.
     save_notes(notes) # Save the updated list of notes back to the database file.
 
 @main.command()
-def update():
+@click.pass_context
+def update(ctx):
     """Updates a note in the database."""
-    if not NOTES_DB.parent.exists(): # Check if the parent directory exists. If not, it creates it.
-        NOTES_DB.parent.mkdir()
-        NOTES_DB.touch() # Create the notes database file if it doesn't exist.
-    notes = load_notes()
+    notes = ctx.obj["notes"]
     print_header()
     for i, note in enumerate(notes, start=1):
         print_note(i, note)
@@ -84,12 +84,10 @@ def update():
     save_notes(notes) # Save the updated list of notes back to the database file.
 
 @main.command()
-def delete():
+@click.pass_context
+def delete(ctx):
     """Deletes a note from the database."""
-    if not NOTES_DB.parent.exists(): # Check if the parent directory exists. If not, it creates it.
-        NOTES_DB.parent.mkdir()
-        NOTES_DB.touch() # Create the notes database file if it doesn't exist.
-    notes = load_notes()
+    notes = ctx.obj["notes"]
     print_header()
     for i, note in enumerate(notes, start=1):
         print_note(i, note)
