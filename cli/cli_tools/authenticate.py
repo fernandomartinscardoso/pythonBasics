@@ -16,6 +16,9 @@ def auth():
     """Provides username and password authentication."""
     username = click.prompt('username')
     password = click.prompt('password', hide_input=True, confirmation_prompt=True)
-    click.echo(f'Authenticating {username}...')
-    # Here you would typically check the username and password against a database or service
-    click.echo('Authentication successful!')
+    
+    if click.confirm('Are you an admin?'):
+        admin_id = click.prompt('Enter your admin ID', type=int, prompt_suffix='>')
+        click.echo(f'Logging in admin {username} with ID {admin_id}')
+    else:
+        click.echo(f'Logging in user {username}')
