@@ -75,3 +75,52 @@ where `length=len(inputs)` specifies the total nuimber of items to process, `sho
 Using the command `click.style(<message>,options)`, the messages on the prompt can be modified in terms of foreground and background colors, typefaces, and many more, as per [Click Documentation](https://click.palletsprojects.com/en/stable/).
 
 Since this command is commonly grouped with `click.echo()` to show messages, there is also the command `click.secho()` to combine both functionalities. Therefore, e.g, `click.echo(click.style(greetings, fg='green', bold=True, bg='yellow'))` and `click.secho(greetings, fg='green', bold=True, bg='yellow')` are equivalents.
+
+## Example 6: The Tests
+
+The folder __tests__ contains three examples of how CLI apps can be tested with CliRunner, which is a testing utility within the Click framework. It provides a simple, convenient way to test CLI apps without having to actually run them in a separate process. It's essentially a runner that simulates the command-line environment and captures the output of your CLI commands, allowing you to easily verify their behavior.
+
+Simple example:
+
+Consider a basic Click CLI app in a file named __my_cli.py__:
+
+```python
+import click
+
+@click.command()
+@click.argument('name')
+def hello(name):
+    click.echo(f'Hello, {name}!')
+
+if __name__ == '__main__':
+    hello()
+```
+
+Now, you can create a test file, for instance __test_my_cli.py__, to test this application.
+
+```python
+from click.testing import CliRunner
+from my_cli import hello
+
+def test_hello_world():
+    runner = CliRunner()
+    result = runner.invoke(hello, ['World'])
+    assert result.exit_code == 0
+    assert 'Hello, World!' in result.output
+```
+
+In this test function:
+
+- We instantiate a CliRunner object.
+
+- We use the `runner.invoke()` method to execute our command. The first argument is the command function itself (`hello`), and the second is a list of command-line arguments we want to pass (`['World']`).
+
+- The `invoke()` method returns a _Result_ object. This object contains important information about the command's execution, such as:
+
+    - `result.exit_code`: This is the exit code of the command. A value of `0` typically indicates success.
+
+    - `result.output`: This is a string containing the captured standard output of the command.
+
+- We use _assertions_ to check if the command behaved as expected. We verify that the exit code is 0 and that the expected output "Hello, World!" is present in the captured output.
+
+This method allows you to test the command's logic, its arguments, options, and how it handles various inputs and errors, all in a controlled and predictable manner.
