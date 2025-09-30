@@ -86,3 +86,13 @@ else:
 How to interpret flow charts and turn them into Python code.
 
 Project of the day: [Treasure Island Game](100DaysOfPython/journey/day003.py).
+
+## Day 4
+
+How to use randomness in Python, since it is very important when building software, especially games. Computers use pseudorandom generators, e.g., [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister). Random module in Python docs are available [here](https://docs.python.org/3/library/random.html).
+
+How to manipulate lists using indices (positive and negative), how to modify items, and how to add items using the function `append()`. Lists documentation is available [here]( https://docs.python.org/3/tutorial/datastructures.html).
+
+The enumeration of a list starts at 0 for the first element. To count from last to first element, you must use negative indices, starting at -1 for the last element. The lists can be inserted into other lists, commonly called _nested list_, which is the base to create matrices in Python.
+
+Project of the day: [Rock, Paper, Scissors Game](100DaysOfPython/journey/day004.py).
