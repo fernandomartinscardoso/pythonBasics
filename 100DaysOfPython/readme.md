@@ -44,7 +44,7 @@ PEMDAS is an acronym, which stands for:
 1. Multiplication/Division (from left to right)
 1. Addition/Subtraction (from left to right)
 
-Project of the day: [Tip Calculator](100DaysOfPython/journey/day002.py).
+Project of the day: [Tip Calculator](journey/day002.py).
 
 ## Day 3
 
@@ -85,7 +85,7 @@ else:
 
 How to interpret flow charts and turn them into Python code.
 
-Project of the day: [Treasure Island Game](100DaysOfPython/journey/day003.py).
+Project of the day: [Treasure Island Game](journey/day003.py).
 
 ## Day 4
 
@@ -95,4 +95,4 @@ How to manipulate lists using indices (positive and negative), how to modify ite
 
 The enumeration of a list starts at 0 for the first element. To count from last to first element, you must use negative indices, starting at -1 for the last element. The lists can be inserted into other lists, commonly called _nested list_, which is the base to create matrices in Python.
 
-Project of the day: [Rock, Paper, Scissors Game](100DaysOfPython/journey/day004.py).
+Project of the day: [Rock, Paper, Scissors Game](journey/day004.py).
