@@ -11,5 +11,78 @@ print("Welcome to the Band Name Generator!")
 user_city = input("What is the name of the city where you grew up in?\n")
 user_pet = input("What is your pet's name?\n")
 print("Your band name could be " + user_city + " " + user_pet)
-
 ```
+
+## Day 2
+
+How to convert variables using functions `float`, `int`, `str`, and `bool`:
+
+- `float`: floating, real, decimal numbers, which can be rounded with `round(<var>, <ndigits>)`
+- `int`: integer numbers
+- `str`: strings, array of characters
+- `bool`: boolean variables (`True` or `False`)
+
+How to check the kind of variable using the function `type`.
+
+How to use arithmetic operators:
+
+| Operator       | Name           |
+| :------------- | :------------- |
+| +              | Addition       |
+| -              | Subtraction    |
+| *              | Multiplication |
+| /              | Division       |
+| //             | Floor division |
+| %              | Modulus        |
+| **             | Exponentiation |
+
+The order of arithmetic operations in Python (PEMDAS).
+PEMDAS is an acronym, which stands for:
+
+1. Parentheses
+1. Exponents
+1. Multiplication/Division (from left to right)
+1. Addition/Subtraction (from left to right)
+
+Project of the day: [Tip Calculator](100DaysOfPython/journey/day002.py).
+
+## Day 3
+
+How to control flow, and how to use comparison and logical operators. How to combine conditions (nested conditions with and without `elif`).
+
+Comparison operators:
+
+| Operator       | Name                     |
+| :------------- | :----------------------- |
+| ==             | Equal                    |
+| !=             | Not equal                |
+| >              | Greater than             |
+| <              | Less than                |
+| >=             | Greater than or equal to |
+| <=             | Less than or equal to    |
+
+Logical operators:
+
+| Operator       | Name                                           |
+| :------------- | :--------------------------------------------- |
+| and            | Returns True if both statements are true       |
+| or             | Returns True if one of the statements is true  |
+| not            | Reverse the result                             |
+
+Conditional Python structure:
+
+```python
+if condition1:
+    process1
+elif condition2:
+    process2
+    .
+    .
+    .
+else:
+    processn
+```
+
+How to interpret flow charts and turn them into Python code.
+
+Project of the day: [Treasure Island Game](100DaysOfPython/journey/day003.py).
