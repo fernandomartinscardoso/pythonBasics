@@ -119,3 +119,6 @@ for number in range(1, 10):
 ```
 
 This code will print the numbers from 1 to 9, one number per row. The range of numbers can be expressed as $$a \leq range(a, b) < b$$ where the range of numbers is inclusive of the lower bound, but not inclusive of the upper bound.
+
+Project of the day: [The Password Generator](journey/day005.py).
+
