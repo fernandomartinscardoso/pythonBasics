@@ -96,3 +96,26 @@ How to manipulate lists using indices (positive and negative), how to modify ite
 The enumeration of a list starts at 0 for the first element. To count from last to first element, you must use negative indices, starting at -1 for the last element. The lists can be inserted into other lists, commonly called _nested list_, which is the base to create matrices in Python.
 
 Project of the day: [Rock, Paper, Scissors Game](journey/day004.py).
+
+## Day 5
+
+How to use loops in Python.
+
+__Syntax of `for`__
+
+```python
+for <item_var> in <list_of_items>:
+    process1
+    process2
+    ...
+```
+
+How to use the function `range`, that creates an interval of integers when combined with another function, like the loop `for`.
+Example:
+
+```python
+for number in range(1, 10):
+    print(number)
+```
+
+This code will print the numbers from 1 to 9, one number per row. The range of numbers can be expressed as $$a \leq range(a, b) < b$$ where the range of numbers is inclusive of the lower bound, but not inclusive of the upper bound.
