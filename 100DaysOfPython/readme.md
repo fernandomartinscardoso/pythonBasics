@@ -122,3 +122,102 @@ This code will print the numbers from 1 to 9, one number per row. The range of n
 
 Project of the day: [The Password Generator](journey/day005.py).
 
+## Day 6
+
+How to use __built-in functions__: Python interpreter has a number of functions and types built into it that are always available. [They are listed here in alphabetical order.](https://docs.python.org/3/library/functions.html)
+
+How to define a new function, as per structure:
+
+```python
+def <function name>():
+    print("Hello")
+    process1
+    process2
+    ...
+```
+
+To call the function, just type it as the command `<function_name>()`. Example:
+
+```python
+#Creating the function
+def user_name():
+    # Inside the function
+    name = input("What is your name? ")
+    print("Hello, " + name)
+    
+#Outside the function
+user_name() # Calling the function
+```
+
+Project to test the usage of functions in Python: [Reeborg's World](https://reeborg.ca/index_en.html).
+
+How to use identation. Check for [PEP 8 - Style Guide for Python Code](https://peps.python.org/pep-0008/).
+
+How to create loops using `while`. Structure of syntax:
+
+```python
+while <condition_is_true>:
+    process1
+    process2
+    ...
+```
+If the condition does not achieve a `False` state, the program will run on an _infinite loop_. We must be careful to avoid this condition.
+
+Answer to [Hurdle 3](https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Hurdle%203&url=worlds%2Ftutorial_en%2Fhurdle3.json) challenge of Reeborg's World:
+
+```python
+def turn_around():
+    turn_left()
+    turn_left()
+
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+
+def one_hurdle():
+    turn_left()
+    move()
+    turn_right()
+    move()
+    turn_right()
+    move()
+    turn_left()
+
+while at_goal() == False:   # or while not at_goal():
+    if wall_in_front() == True:
+        one_hurdle()
+    elif front_is_clear()== True:
+        move()
+```
+Answer to [Hurdle 4](https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Hurdle%204&url=worlds%2Ftutorial_en%2Fhurdle4.json) challenge of Reeborg's World:
+
+```python
+def turn_around():
+    turn_left()
+    turn_left()
+
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+
+def one_hurdle():
+    turn_left()
+    while wall_on_right() == True:
+        move()
+    turn_right()
+    move()
+    turn_right()
+    move()
+    while wall_in_front() == False:
+        move()
+    turn_left()
+
+while at_goal() == False:
+    if wall_in_front() == True:
+        one_hurdle()
+    else:
+        move()
+```
+Project of the day: [The Reeborg's Maze](journey/day006.py). Test files are available [here](originalCourseFiles/Reeborg+World+Tests.zip), which can be loaded from menu `Additional options -> Open world from file`.
