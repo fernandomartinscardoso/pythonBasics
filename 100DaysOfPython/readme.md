@@ -221,3 +221,7 @@ while at_goal() == False:
         move()
 ```
 Project of the day: [The Reeborg's Maze](journey/day006.py). Test files are available [here](originalCourseFiles/Reeborg+World+Tests.zip), which can be loaded from menu `Additional options -> Open world from file`.
+
+## Day 7
+
+Review of previous days. Project of the day: [The Hangman Game](journey/day007.py).
