@@ -161,6 +161,7 @@ while <condition_is_true>:
     process2
     ...
 ```
+
 If the condition does not achieve a `False` state, the program will run on an _infinite loop_. We must be careful to avoid this condition.
 
 Answer to [Hurdle 3](https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Hurdle%203&url=worlds%2Ftutorial_en%2Fhurdle3.json) challenge of Reeborg's World:
@@ -190,6 +191,7 @@ while at_goal() == False:   # or while not at_goal():
     elif front_is_clear()== True:
         move()
 ```
+
 Answer to [Hurdle 4](https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Hurdle%204&url=worlds%2Ftutorial_en%2Fhurdle4.json) challenge of Reeborg's World:
 
 ```python
@@ -220,8 +222,32 @@ while at_goal() == False:
     else:
         move()
 ```
+
 Project of the day: [The Reeborg's Maze](journey/day006.py). Test files are available [here](originalCourseFiles/Reeborg+World+Tests.zip), which can be loaded from menu `Additional options -> Open world from file`.
 
 ## Day 7
 
 Review of previous days. Project of the day: [The Hangman Game](journey/day007.py).
+
+## Day 8
+
+How to set functions with inputs. Structure:
+
+```python
+def my_function(<parameter>):
+    process using <parameter>
+    ...
+
+# To call the function:
+my_function(<value_of_parameter>)
+```
+
+To set a function with multiple inputs, the parameter must be separated by comma: `my_function(<parameter1>, <parameter2>, <parameter3>)`.
+
+The parameters must be set in the same order they are defined by the function, since Python functions follow the logic of _positional parameters_.
+
+If the parameter name is called together with its value (_keyword arguments_), then the order can be changed: `my_function(parameter2 = <value1>, parameter3 = <value2>, parameter1 = <value3>)`.
+
+How to use `index`. The `index()` method returns the position at the first occurrence of the specified value. Syntax: `list.index(element, start, end)`. The `element` to search for is the only required parameter.
+
+Project of the day: [The Caesar Cipher](journey/day008.py). Reference for the project: [Cryptography, History and Usage of the Caesar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher).
