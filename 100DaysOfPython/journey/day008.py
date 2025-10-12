@@ -21,7 +21,7 @@ def caesar(original_text, shift_amount, encode_or_decode):
                 shifted_position %= len(alphabet)
                 output_text += alphabet[shifted_position]
         print(f"Here is the {encode_or_decode}d result: {output_text}")
-        loop = input("Would like to continue coding texts? Type y or n")
+        loop = input("Would like to continue coding texts? Type y or n\n").lower()
         if loop == "n":
             print("Goodbye!")
             coding = False

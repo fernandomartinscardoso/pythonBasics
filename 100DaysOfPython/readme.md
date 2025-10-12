@@ -251,3 +251,33 @@ If the parameter name is called together with its value (_keyword arguments_), t
 How to use `index`. The `index()` method returns the position at the first occurrence of the specified value. Syntax: `list.index(element, start, end)`. The `element` to search for is the only required parameter.
 
 Project of the day: [The Caesar Cipher](journey/day008.py). Reference for the project: [Cryptography, History and Usage of the Caesar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher).
+
+## Day 9
+
+How to implement dictionaries. A dictionary in Python is a data structure that allows us to associate a key to a value and pair the two pieces of data together. Example:
+
+```python
+# Colour of fruits
+fruit_colours = {
+    "apple": "red", 
+    "pear": "green", 
+    "banana": "yellow"
+}
+```
+
+To retrieve items from a dictionary, just use the key as index value, e.g., `fruit_colours[banana]` returns `yellow` as value.
+
+To add an item to the dictionary, you can use the new key as new index and attribute the value for this entry, e.g., `fruit_colours["peach"] = "pink"`. If the key already exists, this command will edit the data associated to it.
+
+Dictionaries in Python accept nested lists and even other dictionaries:
+
+```python
+my_dictionary = {
+    key1: [my_list],
+    key2: {other_dictionary},
+}
+```
+
+To access information in nested lists, a secondary index must be used for the inner list, e.g., given the list `nested_list = ["A", "B", ["C", "D"]]`, the command `nested_list[2][1]` access the element `"D"`.
+
+Project of the day: [The Secret Auction Program](journey/day009.py).
