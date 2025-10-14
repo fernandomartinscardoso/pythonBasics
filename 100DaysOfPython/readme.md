@@ -281,3 +281,45 @@ my_dictionary = {
 To access information in nested lists, a secondary index must be used for the inner list, e.g., given the list `nested_list = ["A", "B", ["C", "D"]]`, the command `nested_list[2][1]` access the element `"D"`.
 
 Project of the day: [The Secret Auction Program](journey/day009.py).
+
+## Day 10
+
+How to use functions with outputs. The full syntax of the function contains the inputs, the body (where logic is defined) and return of output, like this:
+
+```python
+def function_name(input_parameter):
+    <body of function that uses input_argument>
+    return output
+```
+
+How to convert strings to Title Case in Python. Just use the function `title()` associated to the string, for example, `"HeLLo".title()` returns `"Hello"`, `"new york".title()` returns `"New York"`, and so on.
+
+__Return vs. print__ methods as function output: The `return` statement is used to give back a value from a function, which can be used later, while `print` is used to display a value to the console only for the programmer to see. Classic example:
+
+```python
+# The Leap Year Checker
+def is_leap_year(year):
+    if year%400 == 0 or (year%4 == 0 and year%100 != 0):
+        return True
+    else:
+        return False
+
+print(is_leap_year(<year_to_check>))
+```
+
+How to use _docstrings_ to write multiline comments that document your code. Just enclose your text inside a pair of three double quotes. Example:
+
+```python
+"""
+Torches are made to light, jewels to wear,
+Dainties to taste, fresh beauty for the use,
+Herbs for their smell, and sappy plants to bear;
+Things growing to themselves are growth's abuse,
+Seeds spring from seeds, and beauty breedeth beauty;
+Thou wast begot; to get it is thy duty.
+
+ William Shakespeare
+ """
+```
+
+Project of the day: [The Calculator](journey/day010.py).
