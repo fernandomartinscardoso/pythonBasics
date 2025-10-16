@@ -43,10 +43,18 @@ while game_is_not_over:
                 player_score = current_score(player_cards)
             else:
                 break
+            if player_score > 21 and 11 in player_cards:
+                player_cards.remove(11)
+                player_cards.append(1)
+                player_score = current_score(player_cards)
 
         while computer_score < player_score and computer_score < 22:
             computer_cards.append(random.choice(cards))
             computer_score = current_score(computer_cards)
+            if computer_score > 21 and 11 in computer_cards:
+                computer_cards.remove(11)
+                computer_cards.append(1)
+                computer_score = current_score(computer_cards)
         
         if player_score > 21:
             print(f"You went over. You lose! 😤 \nYour final hand: {player_cards}, final score: {player_score}")

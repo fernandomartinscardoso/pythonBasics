@@ -345,3 +345,70 @@ Summary of Python list methods:
 | **`copy()`** | Returns a **shallow copy** of the list. | `L2 = L.copy()` | Returns a new list. |
 
 Project of the day: [The Blackjack Capstone](journey/day011.py).
+
+## Day 12
+
+How to use local and global scopes. Variables (or functions) declared inside functions have _local scope_ (also called _function scope_). They are only seen by other code within the same block of code. Example:
+
+```python
+def my_function():
+    local_var = 2
+    
+# This will cause a NameErrorr because local_var is only defined inside the function
+print(local_var)
+```
+
+Variables or functions declared at the top level (unindented) of a code file have _global scope_. It is accessible anywhere in the code file. Example:
+
+```python
+global_var = 3
+
+def my_function():
+    # This works without any problems
+    print(global_var)
+```
+
+Python, differently from other languages, does not have _block scopes_. This means that variables created nested in other blocks of code, e.g., for loops, if statements, while loops, etc., don't get local scope. They are given _function scope_ if they are within a function or _global scope_ if they are not. Example:
+
+```python
+# Accessible anywhere
+global_var = 1
+
+def my_function():
+    # Only accessible within my_function()
+    local_var = 2
+    
+for _ in range(10):
+    # Accessible anywhere
+    block_var = 3
+```
+
+The code can be forced to allow you to modify something with global if you use the `global` keyword before you use it. Example:
+
+- This will give you an error:
+
+```python
+a = 1
+def my_function():
+    a += 1
+    print(a)
+```
+
+- But this will work:
+
+```python
+a = 1
+def my_function():
+    global a
+    a += 1
+    print(a)
+```
+
+It is a good practice to use global variables to define constant values. It is not mandatory, but the most used name convention for constants is to declare them all caps and with underscore to separate the words. Example:
+
+```python
+PI = 3.14159
+GOOGLE_URL = "https://www.google.com" 
+```
+
+Project of the day: [The Number Guessing Game](journey/day012.py).
