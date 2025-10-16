@@ -323,3 +323,9 @@ Thou wast begot; to get it is thy duty.
 ```
 
 Project of the day: [The Calculator](journey/day010.py).
+
+## Day 11
+
+Review of concepts: list manipulation, usage of the function `sum()`, and algorithm development.
+
+Project of the day: [The Blackjack Capstone](journey/day011.py).
