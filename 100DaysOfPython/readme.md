@@ -326,6 +326,22 @@ Project of the day: [The Calculator](journey/day010.py).
 
 ## Day 11
 
-Review of concepts: list manipulation, usage of the function `sum()`, and algorithm development.
+Review of concepts: list manipulation, usage of the function `sum()`, usage of library `math`, and algorithm development.
+
+Summary of Python list methods:
+
+| Method | Description | Example | Returns/Effect |
+| :--- | :--- | :--- | :--- |
+| **`append(element)`** | Adds a single `element` to the end of the list. | `L.append(4)` | Modifies the list in-place. |
+| **`insert(index, element)`** | Inserts an `element` at the specified `index`. | `L.insert(1, 'a')` | Modifies the list in-place. |
+| **`extend(iterable)`** | Adds all elements of an `iterable` (like another list) to the end of the list. | `L.extend([5, 6])` | Modifies the list in-place. |
+| **`remove(element)`** | Removes the **first** occurrence of the specified `element`. Raises a `ValueError` if the element is not found. | `L.remove(2)` | Modifies the list in-place. |
+| **`pop([index])`** | Removes and returns the element at the specified `index`. If no index is given, it removes and returns the **last** element. | `L.pop(0)` or `L.pop()` | Returns the removed element. Modifies the list in-place. |
+| **`clear()`** | Removes all items from the list, making it empty. | `L.clear()` | Modifies the list in-place. |
+| **`index(element, [start], [end])`** | Returns the **index** of the first occurrence of the `element`. Raises a `ValueError` if the element is not found. | `L.index(3)` | Returns an integer (the index). |
+| **`count(element)`** | Returns the number of times the specified `element` appears in the list. | `L.count(2)` | Returns an integer (the count). |
+| **`sort(key=None, reverse=False)`** | Sorts the list **in-place**. Arguments `key` and `reverse` are optional. | `L.sort()` or `L.sort(reverse=True)` | Modifies the list in-place. Returns `None`. |
+| **`reverse()`** | Reverses the elements of the list **in-place**. | `L.reverse()` | Modifies the list in-place. |
+| **`copy()`** | Returns a **shallow copy** of the list. | `L2 = L.copy()` | Returns a new list. |
 
 Project of the day: [The Blackjack Capstone](journey/day011.py).
