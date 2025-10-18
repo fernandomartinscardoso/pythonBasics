@@ -412,3 +412,44 @@ GOOGLE_URL = "https://www.google.com"
 ```
 
 Project of the day: [The Number Guessing Game](journey/day012.py).
+
+## Day13
+
+How to debug in Python. Some bugs only occur under certain conditions. In order to debug them, we need to be able to reliably reproduce the bug and diagnose our problem to figure out which conditions trigger the bug. Example:
+
+```python
+from random import randint
+dice_images = ["❶", "❷", "❸", "❹", "❺", "❻"]
+dice_num = randint(1, 6)
+print(dice_images[dice_num])
+```
+
+In the code above, the dice face `❶` is never reachable because the list positions start at 0, and when `dice_num` is equal to 6, the position is out of range, since last position is 5.
+
+### Debug strategies
+
+- __Play Computer Method__
+
+    Playing computer is an important skill in debugging. You need to be able to go through your code line by line as if you were the computer to help you figure out what is going wrong.
+
+- __Catching Exceptions__
+
+    You can use a __try/except__ block in Python to catch any exceptions that might occur. For example, if you imagine there could be a chance of user error. You can prevent it crashing your code by anticipating it. You trap the dangerous code inside a try block and use an except block to catch any potential errors. Then you define what should happen when that error occurs instead of simply just crashing and stopping the code.
+
+- __Use `print()`__
+
+    It can help expose hidden values while your code is running. The `print` function can be used to expose intermediate values hidden by internal processes like repetition loops, and help you debug your code.
+
+- __Use a debugger__
+
+    Most IDEs (Integrated Development Environments) such as PyCharm and VSCode will have built-in tools for debugging. This is normally known as the debugger. In many ways, they are like print statements on steroids.
+    Debuggers allows us to peek into our code during execution and pause on chosen lines to figure out what is the inner mechanism and where it's going wrong.
+    Debugger main tools in PyCharm:
+    1. __Breakpoint__ - You can set a breakpoint by clicking on a line in the gutter of the code (where the line numbers are). This line will be where the program pauses during debug run.
+    1. __Step Over__ - This button will go through the execution of your code line by line and allow you to view the intermediate values of your variables.
+    1. __Step Into__ - This will enter into any other modules that your code references. e.g. If you use a function from the random module it will show you the original code for that function so you can better understand its functionality and how it relates to your problems.
+    1. __Step Into My Code__ - This does the same thing as Step Into, but it limits the scope to your own project code and ignores library code such as random.
+
+- __External support__
+
+    Check for the problems with experts or on Internet, as in [StackOverflow](https://stackoverflow.com/questions/tagged/python).
