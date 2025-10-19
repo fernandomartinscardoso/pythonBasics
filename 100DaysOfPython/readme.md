@@ -435,6 +435,25 @@ In the code above, the dice face `❶` is never reachable because the list posit
 - __Catching Exceptions__
 
     You can use a __try/except__ block in Python to catch any exceptions that might occur. For example, if you imagine there could be a chance of user error. You can prevent it crashing your code by anticipating it. You trap the dangerous code inside a try block and use an except block to catch any potential errors. Then you define what should happen when that error occurs instead of simply just crashing and stopping the code.
+    The structure has two main parts:
+    1. `try` block: Contains the code that might potentially raise an exception (error).
+    2. `except` block: Contains the code that executes if an exception is raised in the `try` block.
+    Example:
+
+    ```python
+    try:
+        # 1. Code that might fail
+        result = 10 / 0 
+    except:
+        # 2. Code that executes if an error occurs
+        print("An error occurred! Cannot divide by zero.")
+        result = 0 # Provide a safe default value
+
+    print(f"The final result is: {result}")
+    # Output:
+    # An error occurred! Cannot divide by zero.
+    # The final result is: 0
+    ```
 
 - __Use `print()`__
 
@@ -453,3 +472,9 @@ In the code above, the dice face `❶` is never reachable because the list posit
 - __External support__
 
     Check for the problems with experts or on Internet, as in [StackOverflow](https://stackoverflow.com/questions/tagged/python).
+
+## Day 14
+
+How to create a game that compares the number of followers between two social media profiles. The comparison continues while the player is right guessing the answer, and finishes when the guess is wrong, providing the score to the player. The project is based on the classic online game [Higher or Lower](https://www.higherlowergame.com/).
+
+Project of the day: [Higher or Lower Game](journey/day014.py).
