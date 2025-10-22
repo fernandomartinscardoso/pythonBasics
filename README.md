@@ -24,7 +24,7 @@ To explore or run the code in this repository, follow these steps:
 
 1. Ensure Python is installed: This repository is developed using Python 3.13 or higher.
 2. Install dependencies (if any): While most algorithm files are pure Python, some test projects may require external libraries.
-   To be completed: list of [requirements](requeriments.txt) to be installed.
+   To be completed: list of [requirements](https://github.com/fernandomartinscardoso/pythonBasics/blob/main/requirements.txt) to be installed.
 
    ```bash
    pip install -r requirements.txt
