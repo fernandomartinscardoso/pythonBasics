@@ -99,4 +99,4 @@ After selection, the interpreter path will appear in the bottom-right corner of 
 
 ## ⚖️ License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/fernandomartinscardoso/matlabpythonBasics/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/fernandomartinscardoso/pythonBasics/blob/main/LICENSE) file for details.
