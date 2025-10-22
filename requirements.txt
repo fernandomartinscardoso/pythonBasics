@@ -1,0 +1,19 @@
+# --- Testing Frameworks ---
+# For writing reliable unit tests for algorithms and data structures
+pytest
+
+# --- Data Analysis / Scientific Computing (Common in advanced testing/projects) ---
+# Widely used for numerical operations and arrays (often needed for matrix/graph problems)
+numpy
+
+# --- Web Development / Scraping (Common for general utility projects) ---
+# Popular library for making HTTP requests easily
+requests
+
+# --- Data Manipulation (If projects involve parsing or data handling) ---
+# Essential for working with structured data like CSVs or basic dataframes
+pandas
+
+# --- Utility ---
+# For creating command-line interfaces (CLIs) for test projects
+click
