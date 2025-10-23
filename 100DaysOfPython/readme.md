@@ -483,4 +483,8 @@ Project of the day: [Higher or Lower Game](journey/day014.py).
 
 How to use [Pycharm keyboard shortcuts](https://www.jetbrains.com/help/pycharm/mastering-keyboard-shortcuts.html?keymap=secondary_windows).
 
-The Coffee Machine Project ☕
+Source for emojis to be used in the output to improve interface design: [Emojipedia](https://emojipedia.org/hot-beverage).
+
+How to code a coffee vending machine according to the [requirements](journey/day015_requirements.py).
+
+Project of the day: [The Coffee Machine Project ☕](journey/day015.py).
