@@ -478,3 +478,9 @@ In the code above, the dice face `❶` is never reachable because the list posit
 How to create a game that compares the number of followers between two social media profiles. The comparison continues while the player is right guessing the answer, and finishes when the guess is wrong, providing the score to the player. The project is based on the classic online game [Higher or Lower](https://www.higherlowergame.com/).
 
 Project of the day: [Higher or Lower Game](journey/day014.py).
+
+## Day 15
+
+How to use [Pycharm keyboard shortcuts](https://www.jetbrains.com/help/pycharm/mastering-keyboard-shortcuts.html?keymap=secondary_windows).
+
+The Coffee Machine Project ☕
