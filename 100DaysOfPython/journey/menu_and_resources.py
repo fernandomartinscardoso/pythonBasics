@@ -4,6 +4,7 @@ MENU = {
     "espresso": {
         "ingredients": {
             "water": 50,
+            "milk": 0,
             "coffee": 18,
         },
         "cost": 1.5,
@@ -31,5 +32,3 @@ resources = {
     "milk": 200,
     "coffee": 100,
 }
-
-print(MENU["cappuccino"]["ingredients"]["milk"])  # Output: 100
