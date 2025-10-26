@@ -332,17 +332,17 @@ Summary of Python list methods:
 
 | Method | Description | Example | Returns/Effect |
 | :--- | :--- | :--- | :--- |
-| **`append(element)`** | Adds a single `element` to the end of the list. | `L.append(4)` | Modifies the list in-place. |
-| **`insert(index, element)`** | Inserts an `element` at the specified `index`. | `L.insert(1, 'a')` | Modifies the list in-place. |
-| **`extend(iterable)`** | Adds all elements of an `iterable` (like another list) to the end of the list. | `L.extend([5, 6])` | Modifies the list in-place. |
-| **`remove(element)`** | Removes the **first** occurrence of the specified `element`. Raises a `ValueError` if the element is not found. | `L.remove(2)` | Modifies the list in-place. |
-| **`pop([index])`** | Removes and returns the element at the specified `index`. If no index is given, it removes and returns the **last** element. | `L.pop(0)` or `L.pop()` | Returns the removed element. Modifies the list in-place. |
-| **`clear()`** | Removes all items from the list, making it empty. | `L.clear()` | Modifies the list in-place. |
-| **`index(element, [start], [end])`** | Returns the **index** of the first occurrence of the `element`. Raises a `ValueError` if the element is not found. | `L.index(3)` | Returns an integer (the index). |
-| **`count(element)`** | Returns the number of times the specified `element` appears in the list. | `L.count(2)` | Returns an integer (the count). |
-| **`sort(key=None, reverse=False)`** | Sorts the list **in-place**. Arguments `key` and `reverse` are optional. | `L.sort()` or `L.sort(reverse=True)` | Modifies the list in-place. Returns `None`. |
-| **`reverse()`** | Reverses the elements of the list **in-place**. | `L.reverse()` | Modifies the list in-place. |
-| **`copy()`** | Returns a **shallow copy** of the list. | `L2 = L.copy()` | Returns a new list. |
+| __`append(element)`__ | Adds a single `element` to the end of the list. | `L.append(4)` | Modifies the list in-place. |
+| __`insert(index, element)`__ | Inserts an `element` at the specified `index`. | `L.insert(1, 'a')` | Modifies the list in-place. |
+| __`extend(iterable)`__ | Adds all elements of an `iterable` (like another list) to the end of the list. | `L.extend([5, 6])` | Modifies the list in-place. |
+| __`remove(element)`__ | Removes the __first__ occurrence of the specified `element`. Raises a `ValueError` if the element is not found. | `L.remove(2)` | Modifies the list in-place. |
+| __`pop([index])`__ | Removes and returns the element at the specified `index`. If no index is given, it removes and returns the __last__ element. | `L.pop(0)` or `L.pop()` | Returns the removed element. Modifies the list in-place. |
+| __`clear()`__ | Removes all items from the list, making it empty. | `L.clear()` | Modifies the list in-place. |
+| __`index(element, [start], [end])`__ | Returns the __index__ of the first occurrence of the `element`. Raises a `ValueError` if the element is not found. | `L.index(3)` | Returns an integer (the index). |
+| __`count(element)`__ | Returns the number of times the specified `element` appears in the list. | `L.count(2)` | Returns an integer (the count). |
+| __`sort(key=None, reverse=False)`__ | Sorts the list __in-place__. Arguments `key` and `reverse` are optional. | `L.sort()` or `L.sort(reverse=True)` | Modifies the list in-place. Returns `None`. |
+| __`reverse()`__ | Reverses the elements of the list __in-place__. | `L.reverse()` | Modifies the list in-place. |
+| __`copy()`__ | Returns a __shallow copy__ of the list. | `L2 = L.copy()` | Returns a new list. |
 
 Project of the day: [The Blackjack Capstone](journey/day011.py).
 
@@ -488,3 +488,109 @@ Source for emojis to be used in the output to improve interface design: [Emojipe
 How to code a coffee vending machine according to the [requirements](journey/day015_requirements.py).
 
 Project of the day: [The Coffee Machine Project ☕](journey/day015.py).
+
+## Day 16
+
+### Introduction to Object-Oriented Programming (OOP)
+
+Until now, all codes developed were based on __Procedural Programming__, which is a programming paradigm that revolves around the concept of a _procedure call_.
+
+__Procedures__ (also known as routines, subroutines, methods, or functions) contain a series of computational steps to be carried out. The program is typically structured as a sequence of instructions, usually grouped into these procedures, that tell the computer how to perform a task. It emphasizes breaking down a large program into smaller, manageable parts (the procedures) and focuses on the logic and order of execution.
+
+Since procedural programming was one of the oldest method to approach sofware developement, it is commonly associated with languages like __C__, __Pascal__, and __Fortran__. Due to its simplicity and structure, it has the advantages of being easy to follow and implement, providing reusable code, modular design and efficiency, especially when the project is small and of low complexity. However, procedural programming has limitations, particularly when dealing with complex, large-scale applications, difficulting the management and evolution of the project.
+
+__Object-Oriented Programming (OOP)__ is a programming paradigm that organizes software design around __objects__ rather than procedures and logic. An object is a software entity that encapsulates both data (attributes or state) and the functions (methods or behavior) that operate on that data.
+
+The core idea is to model real-world entities as self-contained objects that interact with each other. This contrasts with procedural programming, which focuses on a sequence of steps.
+
+#### Key Concepts of OOP
+
+1. __Classes and Objects__:
+    - A __Class__ is a blueprint or template for creating objects, defining what properties and methods all objects of that type will have.
+    - An __Object__ is a concrete _instance_ of a class, with its own specific data values.
+2. __Encapsulation__: This is the bundling of data and the methods that operate on that data within a single unit (the object). Crucially, it also involves data hiding, where the object's internal state is protected and can only be modified through the object's own public methods, creating a barrier against accidental corruption.
+3. __Inheritance__: This mechanism allows a new class (subclass or child class) to take on the properties and methods of an existing class (superclass or parent class). This promotes __code reusability__ and establishes a clear __"is-a"__ relationship between classes (__"[Subclass] is a [Superclass]"__). Example: If you have a __class__ named `Car` and another __class__ named `Sedan`, the relationship is: __"A Sedan is a Car."__
+4. __Polymorphism__: Meaning "many forms", this allows objects of different classes to be treated as objects of a common type. For example, a general `makeSound()` method can execute different behaviors (roaring, chirping, barking) depending on whether the object calling it is a `Lion`, a `Bird`, or a `Dog`.
+5. __Abstraction__: This involves showing only essential information to the user while hiding the complex implementation details. It focuses on _what_ an object does rather than _how_ it does it, simplifying the system interface.
+
+### OOP in Python
+
+A class in Python is generally writing with __PascalCase__, which is a programming naming convention where compound words are joined without spaces, and the first letter of every word is capitalized. The object is an instance of the class, e.g., for an object named `car` that is an instance of the class `CarBlueprint`, the structure would be:
+
+```python
+car = CarBlueprint()
+```
+
+The object has its __attributes__, and they can be accessed using a dot between the object and the attribute name, e.g., if the `car` has the `speed` and `fuel` as attributes, you can access the `speed` using the syntax `car.speed`.
+
+The object also has its __methods__, and they are functions defined inside a class that define the behaviors of objects created from that class. While the __attributes__ specify what the object _has_, the __methods__ specify of the object _does_. For example, that same object called `car` mentioned before could have a method to break named `stop`, and it could be called as:
+
+```python
+car.stop()
+```
+
+Taking the example from Dr. Yu's class, it's possible to identify the elements of OOP in Python:
+
+```python
+from turtle import Turtle, Screen
+
+tommy = Turtle()
+print(tommy)
+tommy.shape("turtle")
+tommy.color("red", "green")
+tommy.forward(100)
+
+my_screen = Screen()
+print(my_screen.canvheight)
+my_screen.exitonclick()
+```
+
+The code above uses [Turtle Graphics](https://docs.python.org/3/library/turtle.html) library to create a screen with a turtle drawn in [green and red](https://cs111.wellesley.edu/reference/colors) that moves 100 steps forward. The OOP elements are:
+
+- Object: `tommy`
+- Classes: `Turtle()` and `Screen()`
+- Attribute: `canvheight`
+- Methods: `shape()`, `color()`, `forward()`, and `exitonclick()`
+
+The next example requires a package to print formatted tables, and the best place to find packages like that is in the [PyPI portal](https://pypi.org/), that is a repository of software for the Python programming language. For the tables requested, the package [PrettyTable](https://pypi.org/project/prettytable/) is a good option.
+Example: Print the table below in the terminal:
+
+| Pokemon Name | Type    |
+| :----------- | :---    |
+| Pykachu      | Electric|
+| Squirtle     | Water   |
+| Charmander   | Fire    |
+
+Code:
+
+```python
+from prettytable import PrettyTable
+
+table = PrettyTable()
+
+# Method with rows:
+# table.field_names = ["Pokemon Name", "Type"]
+# table.add_row(["Pikachu", "Electric"])
+# table.add_row(["Squirtle", "Water"])
+# table.add_row(["Charmander", "Fire"])
+
+# Method with columns
+table.add_column("Pokemon Name", ["Pikachu", "Squirtle", "Charmander"])
+table.add_column("Type", ["Electric", "Water", "Fire"])
+
+print(table)
+```
+
+Output:
+
+```terminal
++--------------+----------+
+| Pokemon Name |   Type   |
++--------------+----------+
+|   Pikachu    | Electric |
+|   Squirtle   |  Water   |
+|  Charmander  |   Fire   |
++--------------+----------+
+```
+
+__Curiosity__: [Steve Jobs interview](https://www.rollingstone.com/culture/culture-news/steve-jobs-in-1994-the-rolling-stone-interview-231132/) to Rolling Stones magazine on OOP.
