@@ -6,13 +6,15 @@ from menu import Menu
 from coffee_maker import CoffeeMaker
 from money_machine import MoneyMachine
 
+# Define the objects before the loop, otherwise the methods will be refreshed every loop iteration
+menu = Menu()
+coffee_maker = CoffeeMaker()
+coins = MoneyMachine()
+
 machine_is_on = True
 
 while machine_is_on:
-    menu = Menu()
-    coffee_maker = CoffeeMaker()
-    coins = MoneyMachine()
-    user_choice = input(f"What would you like? ({menu.get_items()}): ").lower()
+    user_choice = input(f"What would you like? ({menu.get_items()}".rstrip("/")+"): ").lower()
     if user_choice == "off":
         machine_is_on = False
     elif user_choice == "report":
@@ -22,8 +24,7 @@ while machine_is_on:
         print("Sorry that item is not available.")
     else:
         price = menu.find_drink(user_choice).cost
-        ingr = menu.find_drink(user_choice)
-        if coffee_maker.is_resource_sufficient(ingr):
+        ingredients = menu.find_drink(user_choice)
+        if coffee_maker.is_resource_sufficient(ingredients):
             if coins.make_payment(price):
-                 coffee_maker.make_coffee(ingr)
-
+                 coffee_maker.make_coffee(ingredients)
