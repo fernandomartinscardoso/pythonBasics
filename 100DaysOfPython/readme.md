@@ -594,3 +594,5 @@ Output:
 ```
 
 __Curiosity__: [Steve Jobs interview](https://www.rollingstone.com/culture/culture-news/steve-jobs-in-1994-the-rolling-stone-interview-231132/) to Rolling Stones magazine on OOP.
+
+Project of the day: [The Coffee Machine Project with OOP ☕](journey/day016.py).
