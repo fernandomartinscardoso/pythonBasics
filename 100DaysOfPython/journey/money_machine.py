@@ -1,5 +1,5 @@
 # 100 Days of Python
-# Day 16 - Introdution to Object Oriented Programming (OOP)
+# Day 16 - Introduction to Object-Oriented Programming (OOP)
 # Project of the day: The Coffee Machine with OOP
 
 class MoneyMachine:

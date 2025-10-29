@@ -1,5 +1,5 @@
 # 100 Days of Python
-# Day 16 - Introdution to Object Oriented Programming (OOP)
+# Day 16 - Introduction to Object-Oriented Programming (OOP)
 # Project of the day: The Coffee Machine with OOP
 
 class MenuItem:
@@ -35,4 +35,4 @@ class Menu:
         for item in self.menu:
             if item.name == order_name:
                 return item
-        print("Sorry that item is not available.")
+        return None
