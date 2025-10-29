@@ -1,5 +1,5 @@
 # 100 Days of Python
-# Day 16 - Introduction to Object Oriented Programming (OOP)
+# Day 16 - Introduction to Object-Oriented Programming (OOP)
 # Project of the day: The Coffee Machine with OOP
 
 from menu import Menu
@@ -26,3 +26,4 @@ while machine_is_on:
         if coffee_maker.is_resource_sufficient(ingr):
             if coins.make_payment(price):
                  coffee_maker.make_coffee(ingr)
+
