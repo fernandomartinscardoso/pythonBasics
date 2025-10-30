@@ -1,5 +1,8 @@
 # 📚 Python Algorithms and Data Structures Study Repository
 
+[![Static Badge](https://img.shields.io/badge/3.x-6771B0?logo=python&logoColor=white&label=Python)](https://www.python.org/)
+[![GitHub License](https://img.shields.io/github/license/fernandomartinscardoso/pythonBasics?color=67B082)](https://github.com/fernandomartinscardoso/pythonBasics/blob/main/LICENSE)
+
 This repository serves as a personal learning and practice sandbox for fundamental algorithms and data structures, implemented in Python. It also hosts various small-scale test projects designed to reinforce programming concepts and explore different modules.
 
 ## 🎯 Purpose
