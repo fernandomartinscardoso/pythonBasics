@@ -596,3 +596,35 @@ Output:
 __Curiosity__: [Steve Jobs interview](https://www.rollingstone.com/culture/culture-news/steve-jobs-in-1994-the-rolling-stone-interview-231132/) to Rolling Stones magazine on OOP.
 
 Project of the day: [The Coffee Machine Project with OOP ☕](journey/day016.py).
+
+## Day 17
+
+How to use the different letter cases to distinguish classes, attributes and methods:
+
+- __PascalCase__: all words are typed together, but the first letter of each word is upper case;
+- __camelCase__: similar to PascalCase, but the first letter of the first word is lower case;
+- __snake_case__: all letters are lower case, but the words are connected by underscore.
+
+The PascalCase is commonly used for class names, and snake_case for everything else. I personally like to use camelCase to name directories and repositories.
+
+### Detailing OOP with Python
+
+__Attributes__ are _variables_ associated to an _object_ in the form: `object.attribute`.
+
+__Constructor__ part of the BluePrint that specifies what should happen when our object is being constructed, which is known in programming as _initializing an object_. In Python, there is a special function to initialise the object and create the constructor named `__init__`, that follows the structure:
+
+```python
+class ClassName:
+    def __init__(self):
+        # initialise attributes
+```
+
+Inside the function `__init__`, we the attributes, or define the initial values of the attributes.
+
+The `__init__` function is going to be called everytime a new `object` from its `class` is created. The parameter `self` refers to the object itself. After `self` the other attributes must be added, if they are necessary, for example:
+
+```python
+class Car:
+    def __init__(self, seats):
+        self.seats = seats
+```
