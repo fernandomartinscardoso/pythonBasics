@@ -628,3 +628,7 @@ class Car:
     def __init__(self, seats):
         self.seats = seats
 ```
+
+Project of the day: [The Quiz Game](journey/quiz-game).
+
+To improve the database, it was used the data available at [Open Trivia Database](https://opentdb.com/).
