@@ -629,6 +629,72 @@ class Car:
         self.seats = seats
 ```
 
-Project of the day: [The Quiz Game](journey/quiz-game).
+Project of the day: [The Quiz Game](journey/quizGame).
 
 To improve the database, it was used the data available at [Open Trivia Database](https://opentdb.com/).
+
+## Day 18
+
+How to use more resources of the Turtle Graphics library. How to use __tuples__ and import modules.
+
+References for Turtle:
+
+- [Turtle documentation](https://docs.python.org/3/library/turtle.html)
+- [Reference of colors on trinket](https://trinket.io/docs/colors)
+- [Turtle colors on cs111](https://cs111.wellesley.edu/reference/colors)
+
+### Importing modules
+
+- The whole library:
+
+```python
+import random
+
+var = random.randint(0, 100)
+```
+
+- One function:
+
+```python
+from random import randint
+
+var = randint(0, 100)
+```
+
+- All functions:
+
+```python
+from random import *
+
+var1 = randint(0, 100)
+var2 = choice([0, 1, 2, 3])
+```
+
+- Changing library's name:
+
+```python
+import random as rand
+
+var = rand.randint(0, 100)
+```
+
+Exercises on how to make the `turtle` move on the screen following classic algorithms like the [Random Walk](https://en.wikipedia.org/wiki/Random_walk).
+
+### Tuples and Lists
+
+Lists and Tuples are two of the most commonly used sequence data types in Python, but they differ fundamentally in their mutability and use cases. Mutability is the most important difference:
+
+- __List__: If you have a list `my_list = [10, 20]`, you can later add `30` to it (`my_list.append(30)`).
+- __Tuple__: If you have a tuple `my_tuple = (10, 20)`, attempting to add an element will result in an error, as its structure is fixed.
+
+The tuples have less methods than lists, and the main ones are: `count()` (counts occurrences of an element) and `index()` (finds the first index of an element).
+
+As you may noticed, the syntax of the lists is defined using square brackets `[]`, while tuples are defined using parentheses `()`.
+
+### The Hirst Painting Project
+
+How to use the package `colorgram` to extract colors from an image.
+
+How to test the colors extracted using the [RGB Calculator](https://www.w3schools.com/colors/colors_rgb.asp).
+
+Project of the day: [The Hirst Painting](journey/hirstPainting).
