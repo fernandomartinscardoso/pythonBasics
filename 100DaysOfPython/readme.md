@@ -698,3 +698,56 @@ How to use the package `colorgram` to extract colors from an image.
 How to test the colors extracted using the [RGB Calculator](https://www.w3schools.com/colors/colors_rgb.asp).
 
 Project of the day: [The Hirst Painting](journey/hirstPainting).
+
+## Day 19
+
+How to use Turtle Events Listeners. According to [Turtle Documentation](https://docs.python.org/3/library/turtle.html#turtle.listen), `turtle.listen()` set focus on TurtleScreen in order to collect key-events. Example:
+
+```python
+from turtle import Turtle, Screen
+
+tom = Turtle()
+screen = Screen()
+
+def move_forwards():
+    tom.forward(10)
+
+screen.listen()
+screen.onkey(key="space", fun=move_forwards)
+screen.exitonclick()
+```
+
+The program above creates a turtle that moves 10 steps each time the `space` bar is pressed. Notice the usage of __functions as inputs__. Given two functions `function_a(something)` and `function_b()`, such as:
+
+```python
+def function_a(something):
+    #Do this with something
+    #Then do this
+    #Finally do this
+
+def function_b():
+    #Do this
+```
+
+Since `function_a` admits parameter, `function_b` can be used as parameter of the `function_a` by removing the parenthesis:
+
+```python
+function_a(function_b)
+```
+
+A function that takes another function as input is called _higher order function_. In the example above, `function_a` is the higher order function.
+
+### Instances and states
+
+In OOP, _instance_ and _state_ are two distinct but closely related concepts that define an object.
+
+1. __Instance (or Object)__: an instance (often used interchangeably with the term object) is a concrete realization of a class. Think of a class as a __blueprint__ or a __template__. It defines the structure (what data it holds) and the behavior (what actions it can perform). Example: A `Car` class defines that every car will have properties like `color`, `make`, and `speed`, and methods like `accelerate()` and `brake()`. Therefore, the instance is the actual thing created from that blueprint in the computer's memory. It is a __runtime entity__. Following the same example: `myCar` is an instance of the `Car` class. `yourCar` is another, separate instance of the `Car` class.
+2. __State__: The state of an object is the __set of values__ currently held by its instance variables (or __attributes__) at any given moment. Example based on the `Car` class:
+
+    | Instance Variable/Attribute | Value in Instance 1 (`myCar`) | Value in Instance 2 (`yourCar`) |
+    | :-------------------------- | :---------------------------- | :------------------------------ |
+    | `color`                     | "Red"                         | "Blue"                          |
+    | `make`                      | "Honda"                       | "Ford"                          |
+    | `speed`                     | 50                            | 0                               |
+
+Projects of the day: [The Etch-A-Sketch App](journey/day019_proj_1.py) and [The Turtle Race Game](journey/day019_proj_2.py).
