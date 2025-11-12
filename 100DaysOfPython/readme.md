@@ -751,3 +751,9 @@ In OOP, _instance_ and _state_ are two distinct but closely related concepts tha
     | `speed`                     | 50                            | 0                               |
 
 Projects of the day: [The Etch-A-Sketch App](journey/day019_proj_1.py) and [The Turtle Race Game](journey/day019_proj_2.py).
+
+## Day 20
+
+How to create animation and set coordinates with `Turtle`.
+
+Project of the day: [The Snake Game - Part 1](journey/day020.py).
