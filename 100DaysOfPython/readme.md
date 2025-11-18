@@ -757,3 +757,41 @@ Projects of the day: [The Etch-A-Sketch App](journey/day019_proj_1.py) and [The 
 How to create animation and set coordinates with `Turtle`.
 
 Project of the day: [The Snake Game - Part 1](journey/day020.py).
+
+## Day 21
+
+How to use __Class Inheritance__. Syntax:
+
+- Let's suppose that the class `Fish` should inherit the characteristics of the class `Animal`, then:
+
+```python
+class Fish(Animal):
+    def __init__(self):
+        super().__init__()
+```
+
+The command `super().__init__()`is going to initialize the elements of the __Super Class__ `Animal`.
+Completing the example:
+
+```python
+class Animal:
+    def __init__(self):
+        self.num_eyes = 2
+
+    def breathe(self):
+        print("Inhale, exhale.")
+
+class Fish(Animal):
+    def __init__(self):
+        super().__init__()
+
+    def breathe(self):
+        super().breathe()
+        print("doing this underwater.")
+
+    def swim(self):
+        print("moving in water.")
+
+nemo = Fish()
+nemo.breathe()
+```
