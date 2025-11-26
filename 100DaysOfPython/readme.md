@@ -795,3 +795,9 @@ class Fish(Animal):
 nemo = Fish()
 nemo.breathe()
 ```
+
+Project of the day: [The Snake Game - Part 2](journey/day021.py).
+
+## Day 22
+
+Project of the day: Building the famous arcade game [Pong](journey/day022.py).

@@ -12,7 +12,7 @@ screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("The Snake Game")
-screen.tracer(0)
+screen.tracer(0)  # Turn off automatic screen updates
 
 snake = Snake()
 food = Food()
