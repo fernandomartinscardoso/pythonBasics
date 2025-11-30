@@ -796,7 +796,7 @@ nemo = Fish()
 nemo.breathe()
 ```
 
-Project of the day: [The Snake Game - Part 2](journey/day021.py).
+Project of the day: [The Snake Game - Part 2](journey/day021).
 
 ## Day 22
 
@@ -805,3 +805,38 @@ Project of the day: Building the famous arcade game [Pong](journey/day022).
 ## Day 23
 
 Project of the day: Building the [Turtle Crossing Game](journey/day023).
+
+## Day 24
+
+How to work with local files and directories. For example, let's suppose that you want to read the contents of the file `my_file.txt`. You can use the structure:
+
+```python
+file = open("my_file.txt")
+contents = file.read()
+print(contents)
+file.close()
+```
+
+Do not ignore the method `file.close()`, since it is going to free the computer resources used to store the file for other processes.
+
+To avoid the need to close the file, you can also use the method `with ... as`, that is going to manage the file separately, freeing the computational resources the same way it was done before:
+
+```python
+with open("my_file.txt") as file:
+    contents = file.read()
+    print(contents)
+```
+
+By default, the `open` method operates in read-only mode, but it can be changed to write or append contents to the file:
+
+```python
+# Write mode:
+with open("my_file.txt", mode="w") as file:
+    file.write("New content that is going to replace the current content in the file.")
+
+# Append mode:
+with open("my_file.txt", mode="a") as file:
+    file.write("\nNew content that is going to be appended to the end of the current content in the file.")
+```
+
+Project of the day: Improving the Snake Game to have [high score history data](journey/day024).
