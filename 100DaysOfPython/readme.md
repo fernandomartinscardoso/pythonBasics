@@ -839,4 +839,6 @@ with open("my_file.txt", mode="a") as file:
     file.write("\nNew content that is going to be appended to the end of the current content in the file.")
 ```
 
-Project of the day: Improving the Snake Game to have [high score history data](journey/day024).
+First project of the day: Improving the Snake Game to have [high score history data](journey/day024).
+
+Second project of the day: The [Mail Merge Project](journey/day024_MailMergeProject).
