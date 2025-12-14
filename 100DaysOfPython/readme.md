@@ -842,3 +842,101 @@ with open("my_file.txt", mode="a") as file:
 First project of the day: Improving the Snake Game to have [high score history data](journey/day024).
 
 Second project of the day: The [Mail Merge Project](journey/day024_MailMergeProject).
+
+## Day 25
+
+How to work with CSV data and Pandas Library. In the day 24, it was presented a built-in method to read files in Python.
+
+To demonstrate the data processing methods, a simple CSV table containing [weather data](journey/day025/weather_data.csv) was used.
+
+If we want to read the rows of the [weather data](journey/day025/weather_data.csv) and store it in a list, we can use the following code:
+
+```python
+# Built-in method requires post-processing to get rid of extra symbols from string type data
+with open("./weather_data.csv") as weather_data:
+    data_ = weather_data.readlines()
+    data = []
+    for i in data_:
+        x = i.strip("\n")
+        data.append(x)
+```
+
+Since this weather data is stored in a CSV file, a simpler way to do the same task is to use `csv` library:
+
+```python
+import csv
+
+# The data read via csv library methods is stored in an object, from which the rows can be extracted
+# No post-processing needed
+with open("./weather_data.csv") as data_file:
+    data_ = csv.reader(data_file)
+    data = []
+    for row in data_:
+        data.append(row)
+    print(data)
+```
+
+### Introduction to Pandas
+
+Reading the data from files is just the beginning of data analysis. After that, many operations are necessary to extract useful information from that data.
+
+[Pandas](https://pandas.pydata.org/docs/) is an open-source Python library used for high-performance data manipulation, analysis, and cleaning. It is a fundamental tool in data science, providing efficient, flexible data structures for working with tabular and time-series data, similar to working with spreadsheets or SQL tables.
+
+Pandas is built on top of the NumPy library and offers extensive functionality for data-related tasks:
+
+- __Data Cleaning and Handling Missing Data__: Provides functions to easily detect, remove, fill, or replace missing values ([represented as `NaN` or `NaT`](basicConcepts.md)).
+- __Data Manipulation and Transformation__: Allows for operations such as filtering data based on conditions, merging and joining datasets (like SQL joins), reshaping and pivoting tables, and creating new columns.
+- __Reading/Writing Data__: Has robust I/O tools to read from and write to various file formats, including CSV, Excel, SQL databases, and JSON.
+- __Statistical Analysis__: Includes powerful "group by" functionality for aggregating or transforming data (e.g., calculating averages, sums, or counts for different categories).
+- __Time Series Analysis__: Offers specialized functions for working with date-related data, such as date range generation, frequency conversion, and moving window statistics.
+
+Pandas primarily uses two data structures to manage data:
+
+- `Series`: A one-dimensional labeled array capable of holding any data type. It can be thought of as a single column in a spreadsheet.
+- `DataFrame`: A two-dimensional data structure with both row and column labels, like a table or spreadsheet. It is essentially a container for multiple `Series` objects.
+
+Taking the [weather data](journey/day025/weather_data.csv) as reference, here is a set of examples of what can be done with `pandas`:
+
+```python
+import pandas
+
+# Read CSV file
+data = pandas.read_csv("weather_data.csv")
+data_dict = data.to_dict()
+print(data_dict)
+
+# Convert column to list and calculate mean and max values
+temp_list = data["temp"].to_list()
+print(data["temp"].mean())
+print(data["temp"].max())
+
+# Read data in columns
+# The following two lines do the same thing
+# The structure data["column_name"] returns a Series object
+# The column can also be accessed as an attribute of the DataFrame using the column name
+print(data["condition"])
+print(data.condition)
+
+# Read data in rows
+print(data[data.day == "Tuesday"])
+print(data[data.temp == data.temp.max()])
+
+# Accessing a specific value (one cell) and performing calculations
+monday_temp = data.temp[data.day == "Monday"]
+monday_temp_fahr = monday_temp*9/5 + 32
+print(monday_temp_fahr)
+
+# Creating dataframe from scratch (e.g., dictionary)
+data_dict = {
+    "students": ["Amy", "James", "Angela"],
+    "scores": [76, 56, 65]
+}
+
+data = pandas.DataFrame(data_dict)
+print(data)
+data.to_csv("new_data.csv")
+```
+
+First project of the day: [Counting Squirrels by Color in Central Park](journey/day025).
+
+Second project of the day: [USA States Game](journey/day025_usStatesGame).
