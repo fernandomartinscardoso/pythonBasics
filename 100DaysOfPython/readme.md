@@ -940,3 +940,62 @@ data.to_csv("new_data.csv")
 First project of the day: [Counting Squirrels by Color in Central Park](journey/day025).
 
 Second project of the day: [USA States Game](journey/day025_usStatesGame).
+
+## Day 26
+
+How to use Python List Comprehension and Python Dictionary Comprehension.
+
+### List Comprehension
+
+Python List Comprehension offers a concise and readable way to create lists. It provides an alternative to using traditional `for` loops and the `list.append()` method.
+
+The basic structure of a list comprehension is:
+
+```python
+[expression for item in iterable if condition]
+```
+
+- `expression`: The operation applied to each item. This is the element that will be in the new list.
+- `item`: The variable representing each element in the iterable.
+- `iterable`: The sequence (like a list, tuple, or range) you are iterating over.
+- `if condition` (Optional): A filter to include only items where the condition is true.
+
+Examples:
+
+1. Create a list of squares for numbers 0 through 4.
+
+- Traditional `for` loop:
+
+```python
+squares = []
+for x in range(5):
+    squares.append(x**2)
+```
+
+- List Comprehension:
+
+```python
+squares = [x**2 for x in range(5)]
+```
+
+2. Create a list of even numbers from the list `numbers = [1, 2, 3, 4, 5, 6]`.
+
+- Traditional `for` loop:
+
+```python
+even_numbers = []
+numbers = [1, 2, 3, 4, 5, 6]
+
+for num in numbers:
+    if num % 2 == 0:
+        even_numbers.append(num)
+```
+
+- List Comprehension:
+
+```python
+numbers = [1, 2, 3, 4, 5, 6]
+even_numbers = [num for num in numbers if num % 2 == 0]
+```
+
+### Dictionary Comprehension
