@@ -387,22 +387,22 @@ The code can be forced to allow you to modify something with global if you use t
 
 - This will give you an error:
 
-```python
-a = 1
-def my_function():
-    a += 1
-    print(a)
-```
+    ```python
+    a = 1
+    def my_function():
+        a += 1
+        print(a)
+    ```
 
 - But this will work:
 
-```python
-a = 1
-def my_function():
-    global a
-    a += 1
-    print(a)
-```
+    ```python
+    a = 1
+    def my_function():
+        global a
+        a += 1
+        print(a)
+    ```
 
 It is a good practice to use global variables to define constant values. It is not mandatory, but the most used name convention for constants is to declare them all caps and with underscore to separate the words. Example:
 
@@ -438,22 +438,22 @@ In the code above, the dice face `❶` is never reachable because the list posit
     The structure has two main parts:
     1. `try` block: Contains the code that might potentially raise an exception (error).
     2. `except` block: Contains the code that executes if an exception is raised in the `try` block.
-    Example:
+        Example:
 
-    ```python
-    try:
-        # 1. Code that might fail
-        result = 10 / 0 
-    except:
-        # 2. Code that executes if an error occurs
-        print("An error occurred! Cannot divide by zero.")
-        result = 0 # Provide a safe default value
+        ```python
+        try:
+            # 1. Code that might fail
+            result = 10 / 0 
+        except:
+            # 2. Code that executes if an error occurs
+            print("An error occurred! Cannot divide by zero.")
+            result = 0 # Provide a safe default value
 
-    print(f"The final result is: {result}")
-    # Output:
-    # An error occurred! Cannot divide by zero.
-    # The final result is: 0
-    ```
+        print(f"The final result is: {result}")
+        # Output:
+        # An error occurred! Cannot divide by zero.
+        # The final result is: 0
+        ```
 
 - __Use `print()`__
 
@@ -647,36 +647,36 @@ References for Turtle:
 
 - The whole library:
 
-```python
-import random
+    ```python
+    import random
 
-var = random.randint(0, 100)
-```
+    var = random.randint(0, 100)
+    ```
 
 - One function:
 
-```python
-from random import randint
+    ```python
+    from random import randint
 
-var = randint(0, 100)
-```
+    var = randint(0, 100)
+    ```
 
 - All functions:
 
-```python
-from random import *
+    ```python
+    from random import *
 
-var1 = randint(0, 100)
-var2 = choice([0, 1, 2, 3])
-```
+    var1 = randint(0, 100)
+    var2 = choice([0, 1, 2, 3])
+    ```
 
 - Changing library's name:
 
-```python
-import random as rand
+    ```python
+    import random as rand
 
-var = rand.randint(0, 100)
-```
+    var = rand.randint(0, 100)
+    ```
 
 Exercises on how to make the `turtle` move on the screen following classic algorithms like the [Random Walk](https://en.wikipedia.org/wiki/Random_walk).
 
@@ -764,11 +764,11 @@ How to use __Class Inheritance__. Syntax:
 
 - Let's suppose that the class `Fish` should inherit the characteristics of the class `Animal`, then:
 
-```python
-class Fish(Animal):
-    def __init__(self):
-        super().__init__()
-```
+    ```python
+    class Fish(Animal):
+        def __init__(self):
+            super().__init__()
+    ```
 
 The command `super().__init__()`is going to initialize the elements of the __Super Class__ `Animal`.
 Completing the example:
@@ -1097,3 +1097,5 @@ for (index, row) in student_data_frame.iterrows():
     if row.student == "Angela":
         print(row.score)
 ```
+
+Project of the day: [The NATO Phonetic Alphabet](journey/day026).
