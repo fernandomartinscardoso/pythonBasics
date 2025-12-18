@@ -964,38 +964,136 @@ Examples:
 
 1. Create a list of squares for numbers 0 through 4.
 
-- Traditional `for` loop:
+    - Traditional `for` loop:
 
-```python
-squares = []
-for x in range(5):
-    squares.append(x**2)
-```
+        ```python
+        squares = []
+        for x in range(5):
+            squares.append(x**2)
+        ```
 
-- List Comprehension:
+    - List Comprehension:
 
-```python
-squares = [x**2 for x in range(5)]
-```
+        ```python
+        squares = [x**2 for x in range(5)]
+        ```
 
 2. Create a list of even numbers from the list `numbers = [1, 2, 3, 4, 5, 6]`.
 
-- Traditional `for` loop:
+    - Traditional `for` loop:
 
-```python
-even_numbers = []
-numbers = [1, 2, 3, 4, 5, 6]
+        ```python
+        even_numbers = []
+        numbers = [1, 2, 3, 4, 5, 6]
 
-for num in numbers:
-    if num % 2 == 0:
-        even_numbers.append(num)
-```
+        for num in numbers:
+            if num % 2 == 0:
+                even_numbers.append(num)
+        ```
 
-- List Comprehension:
+    - List Comprehension:
 
-```python
-numbers = [1, 2, 3, 4, 5, 6]
-even_numbers = [num for num in numbers if num % 2 == 0]
-```
+        ```python
+        numbers = [1, 2, 3, 4, 5, 6]
+        even_numbers = [num for num in numbers if num % 2 == 0]
+        ```
 
 ### Dictionary Comprehension
+
+Python dictionary comprehension is a concise and elegant way to create new dictionaries from iterables. It follows a similar logic to list comprehensions but uses curly braces `{}` and a `key: value` pair.
+
+The standard structure of a dictionary comprehension is:
+
+```python
+{key_expression: value_expression for item in iterable}
+```
+
+- `key_expression`: What the key should be.
+- `value_expression`: What the value should be.
+- `for item in iterable`: The loop that provides the data.
+
+Examples:
+
+1. Squaring numbers
+
+    ```python
+    # Create a dictionary where the key is a number and the value is its square.
+
+    # Traditional Way
+    squares = {}
+    for x in range(5):
+        squares[x] = x**2
+
+    # Dictionary Comprehension
+    squares = {x: x**2 for x in range(5)}
+    # Output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+    ```
+
+2. Mapping from two lists
+
+    ```python
+    # Use zip() function to pair elements from two different lists into a dictionary.
+
+    keys = ['name', 'age', 'job']
+    values = ['Alice', 25, 'Engineer']
+
+    user_data = {k: v for k, v in zip(keys, values)}
+    # Output: {'name': 'Alice', 'age': 25, 'job': 'Engineer'}
+    ```
+
+Similarly to comprehensive lists, we can add logic (filtering and conditionals) to comprehensive dictionaries.
+
+Examples:
+
+1. Filtering with `if`
+
+    ```python
+    # Only include even numbers as keys
+    evens = {x: x**2 for x in range(10) if x % 2 == 0}
+    # Output: {0: 0, 2: 4, 4: 16, 6: 36, 8: 64}
+    ```
+
+2. Using `if-else` (Conditional values)
+
+    ```python
+    # Change the value based on a condition.
+    # Note that the if-else goes before the for loop.
+    # Label numbers as Even or Odd
+    numbers = {x: ("Even" if x % 2 == 0 else "Odd") for x in range(5)}
+    # Output: {0: 'Even', 1: 'Odd', 2: 'Even', 3: 'Odd', 4: 'Even'}
+    ```
+
+3. Creating a dictionary from another dictionary
+    Standard structure:
+
+    ```python
+    new_dict = {new_key:new_value for (key, value) in old_dict.items() if condition}
+    ```
+
+    Example:
+    Create a dictionary containing the students that passed (score equals or higher than 60), considering the students scores below.
+
+    ```python
+    students_score = {'Alex': 12, 'Beth': 49, 'Caroline': 15, 'Dave': 3, 'Eleanor': 69, 'Freddie': 87}
+    passed_students = {student:score for (student, score) in students_scores.items() if score>=60}
+    print(f"Passed students are {passed_students}")
+    # Output: Passed students are {'Eleanor': 69, 'Freddie': 87}
+    ```
+
+It's also possible to loop through rows of a data frame created from a dictionary using the library Pandas (method `iterrows`):
+
+```python
+import pandas
+
+student_dict = {
+    student: ["Angela", "James", "Lily"],
+    score: [56, 76, 98]
+}
+
+student_data_frame = pandas.DataFrame(student_dict)
+print(student_data_frame)
+
+for (index, row) in student_data_frame.iterrows():
+    if row.student == "Angela":
+        print(row.score)
+```
