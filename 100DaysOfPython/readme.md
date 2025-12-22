@@ -1099,3 +1099,183 @@ for (index, row) in student_data_frame.iterrows():
 ```
 
 Project of the day: [The NATO Phonetic Alphabet](journey/day026).
+
+## Day 27
+
+How to create basic Graphical User Interfaces (GUI) with Tkinter and understanding Function arguments.
+Documentation to the most important topics:
+
+- [The Packer from Tkinter Docs](https://docs.python.org/3/library/tkinter.html#the-packer)
+- [The Pack from TCL/TK](https://www.tcl-lang.org/man/tcl8.6/TkCmd/pack.htm)
+
+### Function Arguments
+
+In Python, arguments are the values you pass into a function when you call it. Understanding the difference between **positional** and **default** arguments is key to writing flexible and readable code.
+
+#### 1. Positional Arguments
+
+Positional arguments are the most common type. They are assigned to the function parameters based on the **order** (position) in which they are passed.
+
+- **Requirement:** You must provide the exact number of arguments defined in the function signature.
+- **Order Matters:** If you swap the order of the arguments, the function will likely produce an error or an incorrect result.
+
+```python
+def describe_pet(animal_type, pet_name):
+    print(f"I have a {animal_type} named {pet_name}.")
+
+# "hamster" goes to animal_type, "Harry" goes to pet_name
+describe_pet("hamster", "Harry") 
+
+```
+
+#### 2. Default Arguments
+
+Default arguments allow you to define a **fallback value** for a parameter. If the caller does not provide a value for that argument, Python uses the default value specified in the function definition.
+
+* **Flexibility:** It makes certain arguments optional.
+* **Syntax:** You assign the value using the `=` operator in the function header.
+
+```python
+def greet(name, message="Hello"):
+    print(f"{message}, {name}!")
+
+greet("Alice")           # Uses default: "Hello, Alice!"
+greet("Bob", "Good day") # Overrides default: "Good day, Bob!"
+
+```
+
+#### Key Differences at a Glance
+
+| Feature         | Positional Arguments                  | Default Arguments                         |
+| --------------- | ------------------------------------- | ----------------------------------------- |
+| **Requirement** | Mandatory.                            | Optional (uses fallback if missing).      |
+| **Order**       | Must match the function definition.   | Must come **after** positional arguments. |
+| **Use Case**    | For data the function *always* needs. | For settings that rarely change.          |
+
+#### Important Rules to Remember
+
+##### The "Order" Rule
+
+In a function definition, **positional arguments must come before default arguments**. If you try to define a positional argument after a default one, Python will raise a `SyntaxError`.
+
+- **Correct:** `def func(a, b=10):`
+- **Incorrect:** `def func(a=10, b):`
+
+##### The "Mutable Default" Trap
+
+Avoid using mutable objects (like lists or dictionaries) as default arguments. Because the default value is evaluated only once when the function is defined, the same list will be shared across every call, leading to unexpected behavior.
+
+> **Pro Tip:** Use `None` as a default value for lists and initialize them inside the function.
+
+#### 3. Unlimited positional arguments
+
+To set many arguments as input of a funtion, instead of list them one by one, you can use the keyword `*args`:
+
+```python
+def add(*args):
+    total = 0
+    for i in args:
+        total += i
+    return total
+
+print(add(1, 2, 3, 4, 5))
+
+#Output: 15
+```
+
+The default type of `args` is indeed a `tuple` containing all values inserted to the arguments.
+
+#### 4. Unlimited keywords arguments
+
+To set many keywords arguments to a funtion, instead of list them one by one, you can use the argument `**kwargs`:
+
+```python
+def calculate(n, **kwargs):
+    n += kwargs["add"]
+    n *= kwargs["multiply"]
+    return n
+
+print(calculate(2, add=3, multiply=5))
+
+#Output: 25
+```
+
+The default type of `kwargs` is indeed a `dictionary` containing all values inserted to the arguments.
+
+### Introduction to Tkinter
+
+Tkinter is the standard GUI (Graphical User Interface) library for Python. It provides a fast and easy way to create desktop applications by wrapping the Tcl/Tk GUI toolkit into Python classes.
+
+Because it comes pre-installed with most Python distributions, it’s often the first choice for developers looking to build simple tools, dashboards, or calculators without needing to learn complex web frameworks.
+
+#### Core Building Blocks: Widgets
+
+In Tkinter, every element you see on the screen (a text box, a window, or a sliding scale) is called a **widget**. To build an interface, you arrange these widgets within a main window.
+
+##### 1. The Label
+
+The `Label` widget is used to display text or images on the screen. It is primarily "read-only" for the user—meaning they cannot click inside it to type or change the content directly.
+
+- **Best for:** Providing instructions (e.g., "Enter your name:"), displaying status messages, or showing results.
+- **Key Property:** The `text` attribute defines what the label says.
+
+##### 2. The Entry
+
+The `Entry` widget is a single-line text box that allows the user to input data. If you’ve ever filled out a "Username" or "Search" field, you’ve used an Entry widget.
+
+- **Best for:** Gathering short strings of text, numbers, or passwords.
+- **Key Function:** You use the `.get()` method to retrieve whatever the user typed into the box.
+
+##### 3. The Button
+
+The `Button` widget is what makes your application interactive. It is designed to be clicked by the user to trigger a specific action or function.
+
+- **Best for:** Submitting forms, clearing data, or opening new windows.
+- **Key Property:** The `command` attribute, which you link to a Python function. When the button is pressed, that function runs.
+
+#### A Simple Example
+
+Here is how these three components work together in a basic script:
+
+```python
+import tkinter as tk
+
+# 1. Create the main window
+root = tk.Tk()
+root.title("Welcome App")
+
+# 2. Add a Label
+my_label = tk.Label(root, text="What is your name?")
+my_label.pack()
+
+# 3. Add an Entry box
+my_entry = tk.Entry(root)
+my_entry.pack()
+
+# 4. Define a function for the Button
+def say_hello():
+    name = my_entry.get()
+    print(f"Hello, {name}!")
+
+# 5. Add a Button
+my_button = tk.Button(root, text="Submit", command=say_hello)
+my_button.pack()
+
+# Start the application
+root.mainloop()
+
+```
+
+#### Layout Management
+
+Simply creating a widget isn't enough; you have to tell Tkinter where to put it. In the example above, we used `.pack()`, which stacks widgets vertically. However, Tkinter offers three main "geometry managers":
+
+| Manager   | How it works                                                                     |
+| :-------- | :------------------------------------------------------------------------------- |
+| **Pack**  | Stacks widgets in a block, like building with bricks (Top, Bottom, Left, Right). |
+| **Grid**  | Places widgets in a 2D table format using `row` and `column`.                    |
+| **Place** | Allows precise placement using specific X and Y coordinates.                     |
+
+Check the code [Other_Tkinter_Widgets.py](journey/day027/Other_Tkinter_Widgets.py) for some other interesting widgets like Checkbutton, Radiobutton, Scale, and Spinbox.
+
+Project of the day: [Mile to Kilometer Converter](journey/day027).
