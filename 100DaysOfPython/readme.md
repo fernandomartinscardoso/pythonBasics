@@ -2,6 +2,8 @@
 
 Based on the course __100 Days of Code: The Complete Python Pro Bootcamp__ by Dr. Angela Yu, available at [Udemy Platform](https://www.udemy.com/course/100-days-of-code/).
 
+---
+
 ## Day 1
 
 How to use basic output (`print()`) and input commands, declare variables and concatenate strings. Final day project:
@@ -12,6 +14,8 @@ user_city = input("What is the name of the city where you grew up in?\n")
 user_pet = input("What is your pet's name?\n")
 print("Your band name could be " + user_city + " " + user_pet)
 ```
+
+---
 
 ## Day 2
 
@@ -34,7 +38,7 @@ How to use arithmetic operators:
 | /              | Division       |
 | //             | Floor division |
 | %              | Modulus        |
-| **             | Exponentiation |
+| __             | Exponentiation |
 
 The order of arithmetic operations in Python (PEMDAS).
 PEMDAS is an acronym, which stands for:
@@ -45,6 +49,8 @@ PEMDAS is an acronym, which stands for:
 1. Addition/Subtraction (from left to right)
 
 Project of the day: [Tip Calculator](journey/day002.py).
+
+---
 
 ## Day 3
 
@@ -87,6 +93,8 @@ How to interpret flow charts and turn them into Python code.
 
 Project of the day: [Treasure Island Game](journey/day003.py).
 
+---
+
 ## Day 4
 
 How to use randomness in Python, since it is very important when building software, especially games. Computers use pseudorandom generators, e.g., [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister). Random module in Python docs are available [here](https://docs.python.org/3/library/random.html).
@@ -96,6 +104,8 @@ How to manipulate lists using indices (positive and negative), how to modify ite
 The enumeration of a list starts at 0 for the first element. To count from last to first element, you must use negative indices, starting at -1 for the last element. The lists can be inserted into other lists, commonly called _nested list_, which is the base to create matrices in Python.
 
 Project of the day: [Rock, Paper, Scissors Game](journey/day004.py).
+
+---
 
 ## Day 5
 
@@ -121,6 +131,8 @@ for number in range(1, 10):
 This code will print the numbers from 1 to 9, one number per row. The range of numbers can be expressed as $$a \leq range(a, b) < b$$ where the range of numbers is inclusive of the lower bound, but not inclusive of the upper bound.
 
 Project of the day: [The Password Generator](journey/day005.py).
+
+---
 
 ## Day 6
 
@@ -225,9 +237,13 @@ while at_goal() == False:
 
 Project of the day: [The Reeborg's Maze](journey/day006.py). Test files are available [here](originalCourseFiles/Reeborg+World+Tests.zip), which can be loaded from menu `Additional options -> Open world from file`.
 
+---
+
 ## Day 7
 
 Review of previous days. Project of the day: [The Hangman Game](journey/day007.py).
+
+---
 
 ## Day 8
 
@@ -251,6 +267,8 @@ If the parameter name is called together with its value (_keyword arguments_), t
 How to use `index`. The `index()` method returns the position at the first occurrence of the specified value. Syntax: `list.index(element, start, end)`. The `element` to search for is the only required parameter.
 
 Project of the day: [The Caesar Cipher](journey/day008.py). Reference for the project: [Cryptography, History and Usage of the Caesar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher).
+
+---
 
 ## Day 9
 
@@ -281,6 +299,8 @@ my_dictionary = {
 To access information in nested lists, a secondary index must be used for the inner list, e.g., given the list `nested_list = ["A", "B", ["C", "D"]]`, the command `nested_list[2][1]` access the element `"D"`.
 
 Project of the day: [The Secret Auction Program](journey/day009.py).
+
+---
 
 ## Day 10
 
@@ -324,6 +344,8 @@ Thou wast begot; to get it is thy duty.
 
 Project of the day: [The Calculator](journey/day010.py).
 
+---
+
 ## Day 11
 
 Review of concepts: list manipulation, usage of the function `sum()`, usage of library `math`, and algorithm development.
@@ -345,6 +367,8 @@ Summary of Python list methods:
 | __`copy()`__ | Returns a __shallow copy__ of the list. | `L2 = L.copy()` | Returns a new list. |
 
 Project of the day: [The Blackjack Capstone](journey/day011.py).
+
+---
 
 ## Day 12
 
@@ -413,6 +437,8 @@ GOOGLE_URL = "https://www.google.com"
 
 Project of the day: [The Number Guessing Game](journey/day012.py).
 
+---
+
 ## Day13
 
 How to debug in Python. Some bugs only occur under certain conditions. In order to debug them, we need to be able to reliably reproduce the bug and diagnose our problem to figure out which conditions trigger the bug. Example:
@@ -473,11 +499,15 @@ In the code above, the dice face `❶` is never reachable because the list posit
 
     Check for the problems with experts or on Internet, as in [StackOverflow](https://stackoverflow.com/questions/tagged/python).
 
+---
+
 ## Day 14
 
 How to create a game that compares the number of followers between two social media profiles. The comparison continues while the player is right guessing the answer, and finishes when the guess is wrong, providing the score to the player. The project is based on the classic online game [Higher or Lower](https://www.higherlowergame.com/).
 
 Project of the day: [Higher or Lower Game](journey/day014.py).
+
+---
 
 ## Day 15
 
@@ -488,6 +518,8 @@ Source for emojis to be used in the output to improve interface design: [Emojipe
 How to code a coffee vending machine according to the [requirements](journey/day015_requirements.py).
 
 Project of the day: [The Coffee Machine Project ☕](journey/day015.py).
+
+---
 
 ## Day 16
 
@@ -597,6 +629,8 @@ __Curiosity__: [Steve Jobs interview](https://www.rollingstone.com/culture/cultu
 
 Project of the day: [The Coffee Machine Project with OOP ☕](journey/day016.py).
 
+---
+
 ## Day 17
 
 How to use the different letter cases to distinguish classes, attributes and methods:
@@ -632,6 +666,8 @@ class Car:
 Project of the day: [The Quiz Game](journey/quizGame).
 
 To improve the database, it was used the data available at [Open Trivia Database](https://opentdb.com/).
+
+---
 
 ## Day 18
 
@@ -699,6 +735,8 @@ How to test the colors extracted using the [RGB Calculator](https://www.w3school
 
 Project of the day: [The Hirst Painting](journey/hirstPainting).
 
+---
+
 ## Day 19
 
 How to use Turtle Events Listeners. According to [Turtle Documentation](https://docs.python.org/3/library/turtle.html#turtle.listen), `turtle.listen()` set focus on TurtleScreen in order to collect key-events. Example:
@@ -752,11 +790,15 @@ In OOP, _instance_ and _state_ are two distinct but closely related concepts tha
 
 Projects of the day: [The Etch-A-Sketch App](journey/day019_proj_1.py) and [The Turtle Race Game](journey/day019_proj_2.py).
 
+---
+
 ## Day 20
 
 How to create animation and set coordinates with `Turtle`.
 
 Project of the day: [The Snake Game - Part 1](journey/day020.py).
+
+---
 
 ## Day 21
 
@@ -798,13 +840,19 @@ nemo.breathe()
 
 Project of the day: [The Snake Game - Part 2](journey/day021).
 
+---
+
 ## Day 22
 
 Project of the day: Building the famous arcade game [Pong](journey/day022).
 
+---
+
 ## Day 23
 
 Project of the day: Building the [Turtle Crossing Game](journey/day023).
+
+---
 
 ## Day 24
 
@@ -842,6 +890,8 @@ with open("my_file.txt", mode="a") as file:
 First project of the day: Improving the Snake Game to have [high score history data](journey/day024).
 
 Second project of the day: The [Mail Merge Project](journey/day024_MailMergeProject).
+
+---
 
 ## Day 25
 
@@ -941,6 +991,8 @@ First project of the day: [Counting Squirrels by Color in Central Park](journey/
 
 Second project of the day: [USA States Game](journey/day025_usStatesGame).
 
+---
+
 ## Day 26
 
 How to use Python List Comprehension and Python Dictionary Comprehension.
@@ -969,13 +1021,13 @@ Examples:
         ```python
         squares = []
         for x in range(5):
-            squares.append(x**2)
+            squares.append(x__2)
         ```
 
     - List Comprehension:
 
         ```python
-        squares = [x**2 for x in range(5)]
+        squares = [x__2 for x in range(5)]
         ```
 
 2. Create a list of even numbers from the list `numbers = [1, 2, 3, 4, 5, 6]`.
@@ -1022,10 +1074,10 @@ Examples:
     # Traditional Way
     squares = {}
     for x in range(5):
-        squares[x] = x**2
+        squares[x] = x__2
 
     # Dictionary Comprehension
-    squares = {x: x**2 for x in range(5)}
+    squares = {x: x__2 for x in range(5)}
     # Output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
     ```
 
@@ -1049,7 +1101,7 @@ Examples:
 
     ```python
     # Only include even numbers as keys
-    evens = {x: x**2 for x in range(10) if x % 2 == 0}
+    evens = {x: x__2 for x in range(10) if x % 2 == 0}
     # Output: {0: 0, 2: 4, 4: 16, 6: 36, 8: 64}
     ```
 
@@ -1100,6 +1152,8 @@ for (index, row) in student_data_frame.iterrows():
 
 Project of the day: [The NATO Phonetic Alphabet](journey/day026).
 
+---
+
 ## Day 27
 
 How to create basic Graphical User Interfaces (GUI) with Tkinter and understanding Function arguments.
@@ -1110,14 +1164,14 @@ Documentation to the most important topics:
 
 ### Function Arguments
 
-In Python, arguments are the values you pass into a function when you call it. Understanding the difference between **positional** and **default** arguments is key to writing flexible and readable code.
+In Python, arguments are the values you pass into a function when you call it. Understanding the difference between __positional__ and __default__ arguments is key to writing flexible and readable code.
 
 #### 1. Positional Arguments
 
-Positional arguments are the most common type. They are assigned to the function parameters based on the **order** (position) in which they are passed.
+Positional arguments are the most common type. They are assigned to the function parameters based on the __order__ (position) in which they are passed.
 
-- **Requirement:** You must provide the exact number of arguments defined in the function signature.
-- **Order Matters:** If you swap the order of the arguments, the function will likely produce an error or an incorrect result.
+- __Requirement:__ You must provide the exact number of arguments defined in the function signature.
+- __Order Matters:__ If you swap the order of the arguments, the function will likely produce an error or an incorrect result.
 
 ```python
 def describe_pet(animal_type, pet_name):
@@ -1130,10 +1184,10 @@ describe_pet("hamster", "Harry")
 
 #### 2. Default Arguments
 
-Default arguments allow you to define a **fallback value** for a parameter. If the caller does not provide a value for that argument, Python uses the default value specified in the function definition.
+Default arguments allow you to define a __fallback value__ for a parameter. If the caller does not provide a value for that argument, Python uses the default value specified in the function definition.
 
-* **Flexibility:** It makes certain arguments optional.
-* **Syntax:** You assign the value using the `=` operator in the function header.
+* __Flexibility:__ It makes certain arguments optional.
+* __Syntax:__ You assign the value using the `=` operator in the function header.
 
 ```python
 def greet(name, message="Hello"):
@@ -1148,24 +1202,24 @@ greet("Bob", "Good day") # Overrides default: "Good day, Bob!"
 
 | Feature         | Positional Arguments                  | Default Arguments                         |
 | --------------- | ------------------------------------- | ----------------------------------------- |
-| **Requirement** | Mandatory.                            | Optional (uses fallback if missing).      |
-| **Order**       | Must match the function definition.   | Must come **after** positional arguments. |
-| **Use Case**    | For data the function *always* needs. | For settings that rarely change.          |
+| __Requirement__ | Mandatory.                            | Optional (uses fallback if missing).      |
+| __Order__       | Must match the function definition.   | Must come __after__ positional arguments. |
+| __Use Case__    | For data the function *always* needs. | For settings that rarely change.          |
 
 #### Important Rules to Remember
 
 ##### The "Order" Rule
 
-In a function definition, **positional arguments must come before default arguments**. If you try to define a positional argument after a default one, Python will raise a `SyntaxError`.
+In a function definition, __positional arguments must come before default arguments__. If you try to define a positional argument after a default one, Python will raise a `SyntaxError`.
 
-- **Correct:** `def func(a, b=10):`
-- **Incorrect:** `def func(a=10, b):`
+- __Correct:__ `def func(a, b=10):`
+- __Incorrect:__ `def func(a=10, b):`
 
 ##### The "Mutable Default" Trap
 
 Avoid using mutable objects (like lists or dictionaries) as default arguments. Because the default value is evaluated only once when the function is defined, the same list will be shared across every call, leading to unexpected behavior.
 
-> **Pro Tip:** Use `None` as a default value for lists and initialize them inside the function.
+> __Pro Tip:__ Use `None` as a default value for lists and initialize them inside the function.
 
 #### 3. Unlimited positional arguments
 
@@ -1187,10 +1241,10 @@ The default type of `args` is indeed a `tuple` containing all values inserted to
 
 #### 4. Unlimited keywords arguments
 
-To set many keywords arguments to a funtion, instead of list them one by one, you can use the argument `**kwargs`:
+To set many keywords arguments to a funtion, instead of list them one by one, you can use the argument `__kwargs`:
 
 ```python
-def calculate(n, **kwargs):
+def calculate(n, __kwargs):
     n += kwargs["add"]
     n *= kwargs["multiply"]
     return n
@@ -1210,28 +1264,28 @@ Because it comes pre-installed with most Python distributions, it’s often the 
 
 #### Core Building Blocks: Widgets
 
-In Tkinter, every element you see on the screen (a text box, a window, or a sliding scale) is called a **widget**. To build an interface, you arrange these widgets within a main window.
+In Tkinter, every element you see on the screen (a text box, a window, or a sliding scale) is called a __widget__. To build an interface, you arrange these widgets within a main window.
 
 ##### 1. The Label
 
 The `Label` widget is used to display text or images on the screen. It is primarily "read-only" for the user—meaning they cannot click inside it to type or change the content directly.
 
-- **Best for:** Providing instructions (e.g., "Enter your name:"), displaying status messages, or showing results.
-- **Key Property:** The `text` attribute defines what the label says.
+- __Best for:__ Providing instructions (e.g., "Enter your name:"), displaying status messages, or showing results.
+- __Key Property:__ The `text` attribute defines what the label says.
 
 ##### 2. The Entry
 
 The `Entry` widget is a single-line text box that allows the user to input data. If you’ve ever filled out a "Username" or "Search" field, you’ve used an Entry widget.
 
-- **Best for:** Gathering short strings of text, numbers, or passwords.
-- **Key Function:** You use the `.get()` method to retrieve whatever the user typed into the box.
+- __Best for:__ Gathering short strings of text, numbers, or passwords.
+- __Key Function:__ You use the `.get()` method to retrieve whatever the user typed into the box.
 
 ##### 3. The Button
 
 The `Button` widget is what makes your application interactive. It is designed to be clicked by the user to trigger a specific action or function.
 
-- **Best for:** Submitting forms, clearing data, or opening new windows.
-- **Key Property:** The `command` attribute, which you link to a Python function. When the button is pressed, that function runs.
+- __Best for:__ Submitting forms, clearing data, or opening new windows.
+- __Key Property:__ The `command` attribute, which you link to a Python function. When the button is pressed, that function runs.
 
 #### A Simple Example
 
@@ -1272,10 +1326,71 @@ Simply creating a widget isn't enough; you have to tell Tkinter where to put it.
 
 | Manager   | How it works                                                                     |
 | :-------- | :------------------------------------------------------------------------------- |
-| **Pack**  | Stacks widgets in a block, like building with bricks (Top, Bottom, Left, Right). |
-| **Grid**  | Places widgets in a 2D table format using `row` and `column`.                    |
-| **Place** | Allows precise placement using specific X and Y coordinates.                     |
+| __Pack__  | Stacks widgets in a block, like building with bricks (Top, Bottom, Left, Right). |
+| __Grid__  | Places widgets in a 2D table format using `row` and `column`.                    |
+| __Place__ | Allows precise placement using specific X and Y coordinates.                     |
 
 Check the code [Other_Tkinter_Widgets.py](journey/day027/Other_Tkinter_Widgets.py) for some other interesting widgets like Checkbutton, Radiobutton, Scale, and Spinbox.
 
 Project of the day: [Mile to Kilometer Converter](journey/day027).
+
+---
+
+## Day 28
+
+How to implement dynamic typing using on Tkinter GUI.
+
+Tip: to check the code for colors and also have a combination of them, the [Color Hunt](https://colorhunt.co/) website is really useful.
+
+### Itens configuration: Label vs. Canvas
+
+#### 1. `label.config()`
+
+This is used to change the properties of the __entire Label widget__. When you call `.config()`, you are modifying a single object that occupies a specific cell in your `grid()`.
+
+- __Scope:__ Affects the whole widget.
+- __Target:__ The widget variable itself (e.g., `my_label`).
+- __Usage:__ Changing text, font, background color, or relief.
+
+```python
+my_label = tk.Label(root, text="Old Text", bg="blue")
+my_label.grid(row=0, column=0)
+
+# Updates the specific label widget
+my_label.config(text="New Text", bg="red")
+
+```
+
+#### 2. `canvas.itemconfig()`
+
+This is used to change properties of __specific items drawn inside__ a Canvas. A single Canvas widget can hold hundreds of items, so you must tell Tkinter which specific item ID (or "tag") you want to modify.
+
+- __Scope:__ Affects a specific object _inside_ the Canvas.
+- __Target:__ The Canvas widget + the __ID__ of the item.
+- __Usage:__ Changing the color of a specific line, the text of a string, or the image in a photo object.
+
+```python
+canvas = tk.Canvas(root, width=200, height=200)
+canvas.grid(row=0, column=0)
+
+# When you create a canvas item, it returns an ID (integer)
+text_id = canvas.create_text(100, 100, text="Hello")
+
+# You use that ID to update the item later
+canvas.itemconfig(text_id, text="Goodbye", fill="blue")
+
+```
+
+#### Key Differences Comparison
+
+| Feature            | `label.config()`                       | `canvas.itemconfig()`                           |
+| ------------------ | -------------------------------------- | ----------------------------------------------- |
+| __Object Type__    | A standard UI Widget.                  | An item drawn on a Canvas.                      |
+| __Reference__      | Uses the variable name (`label`).      | Uses the item ID or a Tag.                      |
+| __Layering__       | Managed by `grid` or `pack`.           | Managed by Z-order (stacking) on the Canvas.    |
+| __Common Options__ | `text`, `image`, `bg`, `fg`, `relief`. | `text`, `fill`, `outline`, `width`, `tags`.     |
+| __Efficiency__     | Best for simple text/image boxes.      | Best for complex graphics or overlapping items. |
+
+Project of the day: [Pomodoro Clock](journey/day028).
+
+---
