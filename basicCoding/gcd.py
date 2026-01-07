@@ -10,4 +10,4 @@ def gcd(u,v):
     gcd=t
     return print("GCD of {} and {} is {}".format(u,v,gcd))
 
-gcd(0,26)
+gcd(3,26)
