@@ -1394,3 +1394,15 @@ canvas.itemconfig(text_id, text="Goodbye", fill="blue")
 Project of the day: [Pomodoro Clock](journey/day028).
 
 ---
+
+## Day 29
+
+How to build a password manager GUI app with Tkinter.
+
+References:
+
+- [Canvas Documentation](https://tkdocs.com/tutorial/canvas.html)
+- [Entries with Tkinter](https://tkdocs.com/tutorial/widgets.html#entry)
+- [Python File Write](https://www.w3schools.com/python/python_file_write.asp)
+
+Project of the day: [Password Manager](journey/day029).
