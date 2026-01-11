@@ -1021,13 +1021,13 @@ Examples:
         ```python
         squares = []
         for x in range(5):
-            squares.append(x__2)
+            squares.append(x**2)
         ```
 
     - List Comprehension:
 
         ```python
-        squares = [x__2 for x in range(5)]
+        squares = [x**2 for x in range(5)]
         ```
 
 2. Create a list of even numbers from the list `numbers = [1, 2, 3, 4, 5, 6]`.
@@ -1074,10 +1074,10 @@ Examples:
     # Traditional Way
     squares = {}
     for x in range(5):
-        squares[x] = x__2
+        squares[x] = x**2
 
     # Dictionary Comprehension
-    squares = {x: x__2 for x in range(5)}
+    squares = {x: x**2 for x in range(5)}
     # Output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
     ```
 
@@ -1101,7 +1101,7 @@ Examples:
 
     ```python
     # Only include even numbers as keys
-    evens = {x: x__2 for x in range(10) if x % 2 == 0}
+    evens = {x: x**2 for x in range(10) if x % 2 == 0}
     # Output: {0: 0, 2: 4, 4: 16, 6: 36, 8: 64}
     ```
 
@@ -1399,10 +1399,15 @@ Project of the day: [Pomodoro Clock](journey/day028).
 
 How to build a password manager GUI app with Tkinter.
 
+How to incorporate clipboard options to your code, if you want to make the new generated password available to be pasted, for instance, into the service you are logging in.
+
 References:
 
 - [Canvas Documentation](https://tkdocs.com/tutorial/canvas.html)
 - [Entries with Tkinter](https://tkdocs.com/tutorial/widgets.html#entry)
 - [Python File Write](https://www.w3schools.com/python/python_file_write.asp)
+- [Pyperclip](https://pypi.org/project/pyperclip/)
 
 Project of the day: [Password Manager](journey/day029).
+
+---
