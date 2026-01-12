@@ -1411,3 +1411,39 @@ References:
 Project of the day: [Password Manager](journey/day029).
 
 ---
+
+## Day 30
+
+In case you are coding blocks where some kind of error is expected, you can "catch exceptions" using the options `try... except ... else... finally`:
+
+```python
+try:
+    # Something that might cause an exception
+except <ErrorType>:
+    # Do this if there was an exception
+else:
+    # Do this if there were no exceptions
+finally:
+    # Do this no matter what happened
+```
+
+Simple example:
+
+```python
+try:
+    file = open("a_data.txt", "r")
+    a_dictionary = {"key": "value"}
+    print(a_dictionary["some_key"])
+except FileNotFoundError:
+    file = open("a_data.txt", "w")
+    file.write("Something")
+except KeyError as error_message:
+    print(f"The key {error_message} does not exist.")
+else:
+    # This block runs only if there were no exceptions
+    content = file.read()
+    print(content)
+finally:
+    file.close()
+    print("File was closed.")
+```
