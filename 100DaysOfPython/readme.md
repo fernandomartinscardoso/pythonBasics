@@ -38,7 +38,7 @@ How to use arithmetic operators:
 | /              | Division       |
 | //             | Floor division |
 | %              | Modulus        |
-| __             | Exponentiation |
+| **             | Exponentiation |
 
 The order of arithmetic operations in Python (PEMDAS).
 PEMDAS is an acronym, which stands for:
