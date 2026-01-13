@@ -653,7 +653,7 @@ class ClassName:
         # initialise attributes
 ```
 
-Inside the function `__init__`, we the attributes, or define the initial values of the attributes.
+Inside the function `__init__`, we create the attributes, or define the initial values of the attributes.
 
 The `__init__` function is going to be called everytime a new `object` from its `class` is created. The parameter `self` refers to the object itself. After `self` the other attributes must be added, if they are necessary, for example:
 
@@ -1414,7 +1414,7 @@ Project of the day: [Password Manager](journey/day029).
 
 ## Day 30
 
-In case you are coding blocks where some kind of error is expected, you can "catch exceptions" using the options `try... except ... else... finally`:
+In case you are coding blocks where some kind of error is expected, you can "catch exceptions" (as we saw in Day 13) using the options `try... except ... else... finally`:
 
 ```python
 try:
@@ -1447,3 +1447,39 @@ finally:
     file.close()
     print("File was closed.")
 ```
+
+### Python exception base classes
+
+Base classes are exceptions that establish the basis of other exceptions. These are not to be inherited by user-defined classes ([Coursera article on the topic](https://www.coursera.org/tutorials/python-exception-cheat-sheet)).
+
+| Exception | Explanation |
+| --------- | ----------- |
+| `BaseException` | Base class for all built-in exceptions. |
+| `Exception` | All built in exceptions are derived from the `Exception` class (other than system-exiting exceptions.) Use this class to derive user-defined exceptions. |
+| `args` | The tuple of arguments that is given to the constructor.  |
+| `with_traceback(tb)` | An alternate traceback display function. Used to return the exception object and set `tb` as the new traceback for the exception. |
+| `BufferError` | Exception raised when a buffer operation cannot be executed. |
+| `ArithmeticError` | Base class for arithmetic errors. |
+| `LookupError` | Base class for exceptions that are raised as a result of the use of an invalid key or index on a mapping or sequence. |
+
+### Other Exceptions
+
+Other exceptions are known as __concrete exceptions__. These are raised most commonly and may have additional subclasses beneath them. The main ones are:
+
+| Exception | Explanation | Hierarchy |
+| --------- | ----------- | --------- |
+| `KeyboardInterrupt` | Raised when an interrupt key (such as `Delete` or `Control-C`) is hit by the user. This exception is notable because it may be raised unpredictably, leaving the program running in an inconsistent state. It is recommended to avoid raising this error. If it is raised, allow it to end the program immediately. | Inherits from `BaseException` to avoid being unintentionally caught by code that catches Exception. |
+| `AttributeError` | When an [attribute reference](https://docs.python.org/3/reference/expressions.html#attribute-references) or assignment fails, this Python exception is raised.  | Inherits from Exception. |
+| `ZeroDivisionError` | Python raises this type of error when the second argument of a modulo operation or a division is 0.  | Inherits from `Exception` and is a subclass of `ArithmeticError`. |
+| `IndexError` | This exception occurs if a sequence subscript is out of range. | Inherits from `Exception`. |
+| `KeyError` | Raised when a mapping key or, dictionary key, is not found in the existing set of keys. | Inherits from `Exception`. |
+| `NameError` | 	When a global or local name cannot be found, this type of error is raised. The conditions for this exception only apply to unqualified names.  | Inherits from `Exception`. |
+| `TypeError` | If an operation or function is applied to an object of improper type, Python raises this exception. | Inherits from `Exception`. |
+| `ValueError` | Raised when an operation or function receives the right type of argument but the wrong value and it cannot be matched by a more specific exception. | Inherits from `Exception`. |
+
+### Reference:
+
+- [Python Docs on Exceptions](https://docs.python.org/3/library/exceptions.html)
+- [Buffer Protocol](https://docs.python.org/3/c-api/buffer.html#bufferobjects)
+
+---
