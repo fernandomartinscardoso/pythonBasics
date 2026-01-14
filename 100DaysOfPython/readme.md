@@ -1477,6 +1477,80 @@ Other exceptions are known as __concrete exceptions__. These are raised most com
 | `TypeError` | If an operation or function is applied to an object of improper type, Python raises this exception. | Inherits from `Exception`. |
 | `ValueError` | Raised when an operation or function receives the right type of argument but the wrong value and it cannot be matched by a more specific exception. | Inherits from `Exception`. |
 
+### Raising Exceptions
+
+In Python, you use the `raise` keyword to trigger an exception. This manually stops the normal flow of the program and signals that an error has occurred.
+
+1. Raising Built-in Exceptions
+
+    You can raise any of Python's built-in exceptions (like `ValueError`, `TypeError`, or `RuntimeError`) followed by an optional error message in parentheses.
+
+    ```python
+    x = -5
+    if x < 0:
+        raise ValueError("Number must be positive") 
+    ```
+2. Re-raising an Exception
+    
+    If you catch an exception but want it to continue propagating up the call stack (for example, after logging it), use a bare `raise` inside an `except` block.
+
+    ```python
+    try:
+        # some risky code
+        1 / 0
+    except ZeroDivisionError:
+        print("Logging division error...")
+        raise  # Re-raises the original exception
+    ```   
+3. Raising Custom Exceptions
+
+    You can define your own exception by creating a new class that inherits from the built-in `Exception` class.
+    ```python
+    class MyCustomError(Exception):
+        """Custom error for specific app logic."""
+        pass
+    raise MyCustomError("Something unique went wrong")
+    ```
+4. Exception Chaining (`raise from`)
+
+    If you want to raise a new exception while preserving the context of an original error, use the `from` clause. This is helpful for debugging to see which error caused another.
+
+    ```python
+    try:
+        int("not_a_number")
+    except ValueError as e:
+        raise RuntimeError("Processing failed") from e
+    ```
+
+5. Adding Notes (Python 3.11+)
+
+    Newer versions of Python allow you to add descriptive notes to an exception without creating a new one using the add_note() method.
+
+    ```python
+    try:
+        raise TypeError("bad type")
+    except Exception as e:
+        e.add_note("Check the input values for integers.")
+        raise
+    ```
+
+Answer to day 30 exercise:
+
+```python
+fruits = ["Apple", "Pear", "Orange"]
+
+# Catch the exception and make sure the code runs without crashing.
+def make_pie(index):
+    try:
+        fruit = fruits[index]
+        print(fruit + " pie")
+    except IndexError:
+        print("Fruit pie")
+
+make_pie(4)
+```
+
+
 ### Reference:
 
 - [Python Docs on Exceptions](https://docs.python.org/3/library/exceptions.html)
