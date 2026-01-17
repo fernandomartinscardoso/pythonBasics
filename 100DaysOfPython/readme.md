@@ -6,14 +6,18 @@ Based on the course __100 Days of Code: The Complete Python Pro Bootcamp__ by Dr
 
 ## Day 1
 
-How to use basic output (`print()`) and input commands, declare variables and concatenate strings. Final day project:
+How to use basic output (`print()`) and input commands, declare variables and concatenate strings.
 
 ```python
-print("Welcome to the Band Name Generator!")
-user_city = input("What is the name of the city where you grew up in?\n")
-user_pet = input("What is your pet's name?\n")
-print("Your band name could be " + user_city + " " + user_pet)
+# Printing messages:
+print("Hello World!")
+# Declaring variables with user input:
+user_var = input("Message to the user.")
+# Concatenating strings:
+print("Your answer is: " + user_var)
 ```
+
+Project of the day: [Band Name Genenrator](journey/day001/main.py).
 
 ---
 
@@ -48,7 +52,7 @@ PEMDAS is an acronym, which stands for:
 1. Multiplication/Division (from left to right)
 1. Addition/Subtraction (from left to right)
 
-Project of the day: [Tip Calculator](journey/day002.py).
+Project of the day: [Tip Calculator](journey/day002/main.py).
 
 ---
 
@@ -91,7 +95,7 @@ else:
 
 How to interpret flow charts and turn them into Python code.
 
-Project of the day: [Treasure Island Game](journey/day003.py).
+Project of the day: [Treasure Island Game](journey/day003/main.py).
 
 ---
 
@@ -103,7 +107,7 @@ How to manipulate lists using indices (positive and negative), how to modify ite
 
 The enumeration of a list starts at 0 for the first element. To count from last to first element, you must use negative indices, starting at -1 for the last element. The lists can be inserted into other lists, commonly called _nested list_, which is the base to create matrices in Python.
 
-Project of the day: [Rock, Paper, Scissors Game](journey/day004.py).
+Project of the day: [Rock, Paper, Scissors Game](journey/day004/main.py).
 
 ---
 
@@ -130,7 +134,7 @@ for number in range(1, 10):
 
 This code will print the numbers from 1 to 9, one number per row. The range of numbers can be expressed as $$a \leq range(a, b) < b$$ where the range of numbers is inclusive of the lower bound, but not inclusive of the upper bound.
 
-Project of the day: [The Password Generator](journey/day005.py).
+Project of the day: [The Password Generator](journey/day005/main.py).
 
 ---
 
@@ -235,13 +239,13 @@ while at_goal() == False:
         move()
 ```
 
-Project of the day: [The Reeborg's Maze](journey/day006.py). Test files are available [here](originalCourseFiles/Reeborg+World+Tests.zip), which can be loaded from menu `Additional options -> Open world from file`.
+Project of the day: [The Reeborg's Maze](journey/day006/main.py). Test files are available [here](originalCourseFiles/Reeborg+World+Tests.zip), which can be loaded from menu `Additional options -> Open world from file`.
 
 ---
 
 ## Day 7
 
-Review of previous days. Project of the day: [The Hangman Game](journey/day007.py).
+Review of previous days. Project of the day: [The Hangman Game](journey/day007/main.py).
 
 ---
 
@@ -266,7 +270,7 @@ If the parameter name is called together with its value (_keyword arguments_), t
 
 How to use `index`. The `index()` method returns the position at the first occurrence of the specified value. Syntax: `list.index(element, start, end)`. The `element` to search for is the only required parameter.
 
-Project of the day: [The Caesar Cipher](journey/day008.py). Reference for the project: [Cryptography, History and Usage of the Caesar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher).
+Project of the day: [The Caesar Cipher](journey/day008/main.py). Reference for the project: [Cryptography, History and Usage of the Caesar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher).
 
 ---
 
@@ -298,7 +302,7 @@ my_dictionary = {
 
 To access information in nested lists, a secondary index must be used for the inner list, e.g., given the list `nested_list = ["A", "B", ["C", "D"]]`, the command `nested_list[2][1]` access the element `"D"`.
 
-Project of the day: [The Secret Auction Program](journey/day009.py).
+Project of the day: [The Secret Auction Program](journey/day009/main.py).
 
 ---
 
@@ -342,7 +346,7 @@ Thou wast begot; to get it is thy duty.
  """
 ```
 
-Project of the day: [The Calculator](journey/day010.py).
+Project of the day: [The Calculator](journey/day010/main.py).
 
 ---
 
@@ -366,7 +370,7 @@ Summary of Python list methods:
 | __`reverse()`__ | Reverses the elements of the list __in-place__. | `L.reverse()` | Modifies the list in-place. |
 | __`copy()`__ | Returns a __shallow copy__ of the list. | `L2 = L.copy()` | Returns a new list. |
 
-Project of the day: [The Blackjack Capstone](journey/day011.py).
+Project of the day: [The Blackjack Capstone](journey/day011/main.py).
 
 ---
 
@@ -435,7 +439,7 @@ PI = 3.14159
 GOOGLE_URL = "https://www.google.com" 
 ```
 
-Project of the day: [The Number Guessing Game](journey/day012.py).
+Project of the day: [The Number Guessing Game](journey/day012/main.py).
 
 ---
 
