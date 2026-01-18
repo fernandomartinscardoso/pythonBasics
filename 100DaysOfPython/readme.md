@@ -509,7 +509,7 @@ In the code above, the dice face `❶` is never reachable because the list posit
 
 How to create a game that compares the number of followers between two social media profiles. The comparison continues while the player is right guessing the answer, and finishes when the guess is wrong, providing the score to the player. The project is based on the classic online game [Higher or Lower](https://www.higherlowergame.com/).
 
-Project of the day: [Higher or Lower Game](journey/day014.py).
+Project of the day: [Higher or Lower Game](journey/day014/main.py).
 
 ---
 
@@ -519,9 +519,9 @@ How to use [Pycharm keyboard shortcuts](https://www.jetbrains.com/help/pycharm/m
 
 Source for emojis to be used in the output to improve interface design: [Emojipedia](https://emojipedia.org/hot-beverage).
 
-How to code a coffee vending machine according to the [requirements](journey/day015_requirements.py).
+How to code a coffee vending machine according to the [requirements](journey/day015/requirements.py).
 
-Project of the day: [The Coffee Machine Project ☕](journey/day015.py).
+Project of the day: [The Coffee Machine Project ☕](journey/day015/main.py).
 
 ---
 
@@ -631,7 +631,7 @@ Output:
 
 __Curiosity__: [Steve Jobs interview](https://www.rollingstone.com/culture/culture-news/steve-jobs-in-1994-the-rolling-stone-interview-231132/) to Rolling Stones magazine on OOP.
 
-Project of the day: [The Coffee Machine Project with OOP ☕](journey/day016.py).
+Project of the day: [The Coffee Machine Project with OOP ☕](journey/day016/main.py).
 
 ---
 
@@ -667,7 +667,7 @@ class Car:
         self.seats = seats
 ```
 
-Project of the day: [The Quiz Game](journey/quizGame).
+Project of the day: [The Quiz Game](journey/day017/quizGame/main.py).
 
 To improve the database, it was used the data available at [Open Trivia Database](https://opentdb.com/).
 
@@ -737,7 +737,7 @@ How to use the package `colorgram` to extract colors from an image.
 
 How to test the colors extracted using the [RGB Calculator](https://www.w3schools.com/colors/colors_rgb.asp).
 
-Project of the day: [The Hirst Painting](journey/hirstPainting).
+Project of the day: [The Hirst Painting](journey/day018/hirstPainting).
 
 ---
 
@@ -792,7 +792,7 @@ In OOP, _instance_ and _state_ are two distinct but closely related concepts tha
     | `make`                      | "Honda"                       | "Ford"                          |
     | `speed`                     | 50                            | 0                               |
 
-Projects of the day: [The Etch-A-Sketch App](journey/day019_proj_1.py) and [The Turtle Race Game](journey/day019_proj_2.py).
+Projects of the day: [The Etch-A-Sketch App](journey/day019/etch_a_sketch.py) and [The Turtle Race Game](journey/day019/turtleRace.py).
 
 ---
 
@@ -800,7 +800,7 @@ Projects of the day: [The Etch-A-Sketch App](journey/day019_proj_1.py) and [The 
 
 How to create animation and set coordinates with `Turtle`.
 
-Project of the day: [The Snake Game - Part 1](journey/day020.py).
+Project of the day: [The Snake Game - Part 1](journey/day020/main.py).
 
 ---
 
