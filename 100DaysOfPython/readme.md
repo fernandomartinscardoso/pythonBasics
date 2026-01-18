@@ -1494,8 +1494,9 @@ In Python, you use the `raise` keyword to trigger an exception. This manually st
     if x < 0:
         raise ValueError("Number must be positive") 
     ```
+
 2. Re-raising an Exception
-    
+
     If you catch an exception but want it to continue propagating up the call stack (for example, after logging it), use a bare `raise` inside an `except` block.
 
     ```python
@@ -1505,16 +1506,19 @@ In Python, you use the `raise` keyword to trigger an exception. This manually st
     except ZeroDivisionError:
         print("Logging division error...")
         raise  # Re-raises the original exception
-    ```   
+    ```
+
 3. Raising Custom Exceptions
 
     You can define your own exception by creating a new class that inherits from the built-in `Exception` class.
+
     ```python
     class MyCustomError(Exception):
         """Custom error for specific app logic."""
         pass
     raise MyCustomError("Something unique went wrong")
     ```
+
 4. Exception Chaining (`raise from`)
 
     If you want to raise a new exception while preserving the context of an original error, use the `from` clause. This is helpful for debugging to see which error caused another.
@@ -1538,24 +1542,9 @@ In Python, you use the `raise` keyword to trigger an exception. This manually st
         raise
     ```
 
-Answer to day 30 exercise:
+First project of the day: [Improved NATO Alphabet App](/journey/day030_NATO_alphabet_improved/main.py).
 
-```python
-fruits = ["Apple", "Pear", "Orange"]
-
-# Catch the exception and make sure the code runs without crashing.
-def make_pie(index):
-    try:
-        fruit = fruits[index]
-        print(fruit + " pie")
-    except IndexError:
-        print("Fruit pie")
-
-make_pie(4)
-```
-
-
-### Reference:
+### References
 
 - [Python Docs on Exceptions](https://docs.python.org/3/library/exceptions.html)
 - [Buffer Protocol](https://docs.python.org/3/c-api/buffer.html#bufferobjects)
