@@ -6,6 +6,7 @@ from tkinter import *
 from tkinter import messagebox
 from random import randint, choice, shuffle
 import pyperclip
+import json
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 def gen_pass():
@@ -35,19 +36,36 @@ def add_pass():
     website = website_entry.get()
     email_user = email_user_entry.get()
     password = password_entry.get()
+    new_data = {
+        website: {
+            "email": email_user,
+            "password": password,
+        }
+    }
 
     if len(email_user) == 0 or len(password) == 0 or len(website) == 0:
         messagebox.showinfo(title="Oops", message="Please don't leave any field empty! 😅")
     else:
-        is_ok = messagebox.askokcancel(title=website, message=f"These are the details entered: \nE-Mail/User: {email_user}, \nPassword: {password} "
-                                                      f"\nIs it ok to save?")
-        if is_ok:
-            with open("data.txt", "a") as f:
-                f.write(website + " | ")
-                f.write(email_user + " | ")
-                f.write(password + "\n")
-                website_entry.delete(0, "end")
-                password_entry.delete(0, "end")
+        try:
+            with open("data.json", "r") as data_file:
+                # Reading old data
+                data = json.load(data_file)
+                # Updating old data with new data
+                data.update(new_data)
+        except FileNotFoundError:
+            with open("data.json", "w") as data_file:
+                # Saving updated data
+                json.dump(new_data, data_file, indent=4)
+        else:
+            # Updating old data with new data
+            data.update(new_data)
+            with open("data.json", "w") as data_file:
+                # Saving updated data
+                json.dump(data, data_file, indent=4)
+        finally:
+            # Cleaning entries
+            website_entry.delete(0, END)
+            password_entry.delete(0, END)
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()

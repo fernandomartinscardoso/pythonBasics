@@ -1544,6 +1544,54 @@ In Python, you use the `raise` keyword to trigger an exception. This manually st
 
 First project of the day: [Improved NATO Alphabet App](/journey/day030_NATO_alphabet_improved/main.py).
 
+### JSON Files
+
+JSON, which stands for __JavaScript Object Notation__, is a lightweight format for storing and transporting data. Even though it has "JavaScript" in the name, it is language-independent, meaning almost every modern programming language can read and write it.
+
+Think of it as a digital "filing system" that is easy for humans to read and easy for computers to parse.
+
+#### 1. The Structure of JSON
+
+JSON is built on two primary structures that mirror how we organize information in real life:
+
+- __Key-Value Pairs (Objects)__: These are wrapped in curly braces `{ }`. A "key" is a label, and a "value" is the data assigned to it.
+- __Ordered Lists (Arrays)__: These are wrapped in square brackets `[ ]`. They are used when you have a list of similar items.
+
+##### A Simple Example
+
+If you were describing a person in JSON, it would look like this:
+
+```json
+{
+  "firstName": "Jane",
+  "age": 28,
+  "isEmployee": true,
+  "hobbies": ["photography", "hiking", "coding"]
+}
+
+```
+
+#### 2. Supported Data Types
+
+JSON can only handle specific types of data. This simplicity is what makes it so fast and universal:
+
+| Data Type | Description | Example |
+| --- | --- | --- |
+| __String__ | Text wrapped in double quotes | `"Hello World"` |
+| __Number__ | Integers or floating-point numbers | `42` or `98.6` |
+| __Boolean__ | True or false values | `true` |
+| __Array__ | A list of values | `[1, 2, 3]` |
+| __Object__ | A nested set of key-value pairs | `{"key": "value"}` |
+| __Null__ | An empty value | `null` |
+
+#### 3. Editing and reading JSON file with Python
+
+To edit JSON files with Python, you can simple use the built-in library `json`, and combine the methods accordingly:
+
+- __Write__: `json.dump()`
+- __Read__: `json.load()`
+- __Update__: `json.update()`
+
 ### References
 
 - [Python Docs on Exceptions](https://docs.python.org/3/library/exceptions.html)
