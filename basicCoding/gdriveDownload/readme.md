@@ -180,3 +180,6 @@ gdown --folder https://drive.google.com/drive/folders/YOUR_FOLDER_ID
 
 ```
 
+### 5. Backup automation
+
+Check for this [tutorial.](https://www.youtube.com/watch?v=fkWM7A-MxR0).
