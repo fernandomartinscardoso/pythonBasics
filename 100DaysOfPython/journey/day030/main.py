@@ -67,6 +67,22 @@ def add_pass():
             website_entry.delete(0, END)
             password_entry.delete(0, END)
 
+# ---------------------------- SEARCH PASSWORD ------------------------------- #
+def search_pass():
+    website = website_entry.get()
+    try:
+        with open("data.json", "r") as data_file:
+            data = json.load(data_file)
+    except FileNotFoundError:
+        messagebox.showinfo(title="Error", message="No Data File Found.")
+    else:
+        if website in data:
+            email = data[website]["email"]
+            password = data[website]["password"]
+            messagebox.showinfo(title=website, message=f"Email: {email}\nPassword: {password}")
+        else:
+            messagebox.showinfo(title="Error", message=f"No details for {website} exists.")
+
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Password Manager")
@@ -89,9 +105,9 @@ email_user_label = Label(text="Email/Username:", bg="white")
 email_user_label.grid(column=0, row=2)
 
 # Entries
-website_entry = Entry(width=43)
+website_entry = Entry(width=24)
 website_entry.focus()
-website_entry.grid(column=1, row=1, columnspan=2)
+website_entry.grid(column=1, row=1)
 
 email_user_entry = Entry(width=43)
 email_user_entry.insert(0, "fernando@email.com")
@@ -106,5 +122,8 @@ password_button.grid(column=2, row=3)
 
 add_button = Button(text="Add", command=add_pass, width=40)
 add_button.grid(column=1, row=4, columnspan=2)
+
+search_button = Button(text="Search", command=search_pass, width=14)
+search_button.grid(column=2, row=1)
 
 window.mainloop()

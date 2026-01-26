@@ -1597,4 +1597,6 @@ To edit JSON files with Python, you can simple use the built-in library `json`, 
 - [Python Docs on Exceptions](https://docs.python.org/3/library/exceptions.html)
 - [Buffer Protocol](https://docs.python.org/3/c-api/buffer.html#bufferobjects)
 
+Second project of the day: [Improved Password Manager App](/journey/day030/main.py).
+
 ---
