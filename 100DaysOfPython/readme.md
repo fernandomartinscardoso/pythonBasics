@@ -1600,3 +1600,15 @@ To edit JSON files with Python, you can simple use the built-in library `json`, 
 Second project of the day: [Improved Password Manager App](/journey/day030/main.py).
 
 ---
+
+## Day 31
+
+Capstone Project: the [Flash Card App](/journey/day031).
+
+### References
+
+1. [Hermit Dave Project (FrequencyWords)](https://github.com/fernandomartinscardoso/FrequencyWords)
+2. [Wiktionary Frequency Lists](https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists)
+3. [Open Subtitles](https://www.opensubtitles.org/en/search/subs)
+
+---
