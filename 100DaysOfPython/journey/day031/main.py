@@ -1,0 +1,47 @@
+# 100 Days of Python
+# Day 31 - Capstone Project
+# The Flash Card App
+
+from tkinter import *
+from tkinter import messagebox
+from random import randint, choice, shuffle
+import pyperclip
+import json
+
+BACKGROUND_COLOR = "#B1DDC6"
+FONT_NAME = "Ariel"
+
+# Word checking function
+def wrong_word():
+    pass
+
+def right_word():
+    pass
+# Window setup
+window = Tk()
+window.title("Flashy")
+window.config(pady=50, padx=50, bg=BACKGROUND_COLOR)
+
+# Canvas setup
+canvas = Canvas(width=900, height=626, bg=BACKGROUND_COLOR, highlightthickness=0)
+card_front_image = PhotoImage(file="images/card_front.png")
+canvas.create_image(450, 273, image=card_front_image)
+canvas.grid(column=0, row=0, columnspan=2)
+
+# Buttons
+wrong_button_image = PhotoImage(file="images/wrong.png")
+wrong_word_button = Button(image=wrong_button_image, highlightthickness=0, command=wrong_word)
+wrong_word_button.grid(column=0, row=1)
+
+right_button_image = PhotoImage(file="images/right.png")
+wrong_word_button = Button(image=right_button_image, highlightthickness=0, command=right_word)
+wrong_word_button.grid(column=1, row=1)
+
+# Labels
+language_label = Label(text="Deutsch", font=(FONT_NAME, 40, "italic"), bg="white")
+language_label.place(x=350, y=100)
+
+word_label = Label(text="key", font=(FONT_NAME, 60, "bold"), bg="white")
+word_label.place(x=350, y=213)
+
+window.mainloop()
