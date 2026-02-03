@@ -5,11 +5,25 @@
 from tkinter import *
 from tkinter import messagebox
 from random import randint, choice, shuffle
+import pandas
 import pyperclip
 import json
 
 BACKGROUND_COLOR = "#B1DDC6"
 FONT_NAME = "Ariel"
+TIME_TO_GUESS = 5
+
+# Creating the German-to-English dictionary:
+data = pandas.read_csv("data/german_words.csv")
+data_german = data.German.to_list()
+data_english = data.English.to_list()
+de_en_dict = {data_german[i]: data_english[i] for i in range(len(data_german))}
+
+# Count down function:
+timer = None
+def count_down(count):
+    global timer
+    timer = window.after(1000, count_down, count-1)
 
 # Word checking function
 def wrong_word():
@@ -38,10 +52,14 @@ wrong_word_button = Button(image=right_button_image, highlightthickness=0, comma
 wrong_word_button.grid(column=1, row=1)
 
 # Labels
-language_label = Label(text="Deutsch", font=(FONT_NAME, 40, "italic"), bg="white")
-language_label.place(x=350, y=100)
+def show_german():
+    key = choice(data_german)
+    language_label = Label(text="Deutsch", font=(FONT_NAME, 40, "italic"), bg="white")
+    language_label.place(x=350, y=100)
 
-word_label = Label(text="key", font=(FONT_NAME, 60, "bold"), bg="white")
-word_label.place(x=350, y=213)
+    word_label = Label(text=key, font=(FONT_NAME, 60, "bold"), bg="white")
+    word_label.place(x=350-10*len(key), y=213)
+
+show_german()
 
 window.mainloop()
