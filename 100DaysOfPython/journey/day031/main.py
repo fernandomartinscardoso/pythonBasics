@@ -3,44 +3,62 @@
 # The Flash Card App
 
 from tkinter import *
-from tkinter import messagebox
-from random import randint, choice, shuffle
+from random import choice
 import pandas
 
 BACKGROUND_COLOR = "#B1DDC6"
 FONT_NAME = "Ariel"
 TIME_TO_GUESS = 5000
-key = None
-timer = None
+key = ""
+word_counter = 0
+right_counter = 0
+wrong_counter = 0
 
 # Creating the German-to-English dictionary:
 data = pandas.read_csv("data/german_words.csv")
 data_german = data.German.to_list()
 data_english = data.English.to_list()
-numbers = [j for j in range(3000)]
+de_en_dictionary = {data_german[i]:data_english[i] for i in range(len(data_german))}
 
 # Main functions
 def show_german():
     global key
-    key = choice(numbers)
-    canvas.itemconfig(word_text, text=data_german[key])
+    key = choice(data_german)
+    canvas.itemconfig(card_image, image=card_front_image)
+    canvas.itemconfig(language_text, text="Deutsch", fill="black")
+    canvas.itemconfig(word_text, text=key, fill="black")
 
 def show_english():
     global key
     canvas.itemconfig(card_image, image=card_back_image)
     canvas.itemconfig(language_text, text="English", fill="white")
-    canvas.itemconfig(word_text, text=data_english[key], fill="white")
+    canvas.itemconfig(word_text, text=de_en_dictionary[key], fill="white")
 
 def show_word():
     show_german()
     window.after(TIME_TO_GUESS, show_english)
 
-# Word checking function
+def save_progress():
+    global word_counter, wrong_counter, right_counter
+    with open("my_progress.txt", mode="w") as file:
+        file.write(f"Total words: {word_counter}\n")
+        file.write(f"Total right: {right_counter}\n")
+        file.write(f"Total wrong: {wrong_counter}")
+
+# Word checking functions
 def wrong_word():
-    pass
+    global word_counter, wrong_counter
+    word_counter += 1
+    wrong_counter += 1
+    save_progress()
+    show_word()
 
 def right_word():
-    pass
+    global word_counter, right_counter
+    word_counter += 1
+    right_counter += 1
+    save_progress()
+    show_word()
 
 # Window setup
 window = Tk()

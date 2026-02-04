@@ -1,0 +1,3 @@
+Total words: 7
+Total right: 3
+Total wrong: 4
