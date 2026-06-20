@@ -1,5 +1,0 @@
-nome = str(input('Digite seu nome completo: '))
-nome_editado = nome.strip().lower().title().split()
-print('Muito prazer em lhe conhecer!')
-print('Seu primeiro nome é {}.'.format(nome_editado[0]))
-print('Seu último nome é {}.'.format(nome_editado[len(nome_editado)-1]))
