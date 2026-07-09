@@ -1,3 +1,12 @@
-cli/venv/
-designing/venv/
-basicCoding/venv/
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Python build and cache artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
