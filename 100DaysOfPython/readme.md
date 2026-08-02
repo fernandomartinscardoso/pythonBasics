@@ -1612,3 +1612,26 @@ Capstone Project: the [Flash Card App](/journey/day031).
 3. [Open Subtitles](https://www.opensubtitles.org/en/search/subs)
 
 ---
+
+## Day 32
+
+How to send email using `smtplib` and how to manage dates using `datetime`.
+
+### SMTP
+
+__SMTP (Simple Mail Transfer Protocol)__ is the standard set of rules that email servers and clients use to send and route emails across the internet.
+
+If you think of an email as a physical letter, SMTP is the postal system that transports that letter from your local post office to the recipient's local post office.
+
+When you hit "send" on an email, a specific sequence of events happens behind the scenes:
+
+1. __Submission__: Your email client (like Outlook, Apple Mail, or Gmail) connects to your email provider's SMTP server and hands over the message, including the sender address, the recipient address, and the content.
+2. __Routing (DNS Lookup)__: The SMTP server looks at the recipient's email address (e.g., `user@example.com`). It uses the __Domain Name System (DNS)__ to find the IP address of the mail server responsible for `@example.com`.
+3. __Transfer__: Your SMTP server connects to the recipient's mail server and transfers the email.
+4. __Delivery__: If the recipient's server accepts the email, it stores the message until the recipient logs in to retrieve it. (If the server can't be reached, the SMTP server will keep trying for a certain period before sending you a "delivery failure" bounce-back).
+
+### References
+
+- [SMTPLIB Documentation](https://docs.python.org/3/library/smtplib.html)
+
+---
