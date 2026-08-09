@@ -1630,8 +1630,25 @@ When you hit "send" on an email, a specific sequence of events happens behind th
 3. __Transfer__: Your SMTP server connects to the recipient's mail server and transfers the email.
 4. __Delivery__: If the recipient's server accepts the email, it stores the message until the recipient logs in to retrieve it. (If the server can't be reached, the SMTP server will keep trying for a certain period before sending you a "delivery failure" bounce-back).
 
+### Datetime
+
+The `datetime` module supplies classes for manipulating dates and times.
+Example:
+
+```python
+import datetime as dt
+
+day_of_week = dt.datetime.now().weekday()
+# day_of_week returns a number from 0 to 6, equivalent from Monday to Sunday
+if day_of_week == 6:
+    print("Today is Sunday!")
+else:
+    print("Today is not Sunday... 🙁")
+```
+
 ### References
 
 - [SMTPLIB Documentation](https://docs.python.org/3/library/smtplib.html)
+- [Python Datetime Documentation](https://docs.python.org/3/library/datetime.html)
 
 ---
