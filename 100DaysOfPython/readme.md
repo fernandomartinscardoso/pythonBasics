@@ -1646,9 +1646,13 @@ else:
     print("Today is not Sunday... 🙁")
 ```
 
+Project of the day: [Birthday Wisher](/journey/day032_birthday_wisher/main.py).
+
 ### References
 
 - [SMTPLIB Documentation](https://docs.python.org/3/library/smtplib.html)
 - [Python Datetime Documentation](https://docs.python.org/3/library/datetime.html)
+- [Run Your Python Script Daily](https://github.com/appbrewery/scheduled-tasks/tree/main)
+- [Running and Hosting Python Apps in the Cloud](https://www.pythonanywhere.com/)
 
 ---
