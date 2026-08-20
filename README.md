@@ -117,7 +117,7 @@ In case you have more than one Python version installed, to choose the correct o
 
 - __Alternative: Using the Absolute Path__ (All OS)
   
-  If the above shortcuts do not work, you can trigger venv by point-blank targeting the absolute file path of the desired Python executable. [2, 9] 
+  If the above shortcuts do not work, you can trigger venv by point-blank targeting the absolute file path of the desired Python executable.
 
   1. Windows:
   ```bash
