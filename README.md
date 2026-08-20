@@ -86,6 +86,49 @@ Activating the environment ensures that any packages you install with `pip` go i
 - __Verification__
   Once activated, your terminal prompt should change to show the environment's name in parentheses, like `(.venv) your_username@computer:~/project_folder$`.
 
+In case you have more than one Python version installed, to choose the correct one when creating a virtual environment (`venv`), you must explicitly target that specific version's executable or launcher flag instead of using the generic python command. The exact method depends on your operating system:
+
+- __On Windows__ (Using the Python Launcher)
+  
+  Windows installs a global Python Launcher (`py`) that allows you to easily target any installed version:
+
+   1. List your installed versions to see what is available:
+   ```bash
+   py --list
+   ```
+   2. Create the virtual environment by passing the specific version flag (e.g., -3.11 or -3.12):
+   ```bash
+   py -3.11 -m venv .venv
+   ```
+
+- __On macOS & Linux__
+
+  On Unix-based systems, different Python versions are usually bound to explicit version-numbered commands in your terminal. [6] 
+
+   1. Verify the commands exist by checking their versions:
+   ```bash
+   python3.11 --version
+   python3.12 --version
+   ```
+   2. Create the virtual environment using the specific version command:
+   ```bash
+   python3.11 -m venv .venv
+   ```
+
+- __Alternative: Using the Absolute Path__ (All OS)
+  
+  If the above shortcuts do not work, you can trigger venv by point-blank targeting the absolute file path of the desired Python executable. [2, 9] 
+
+  1. Windows:
+  ```bash
+  & "C:\Users\YourName\AppData\Local\Programs\Python\Python311\python.exe" -m venv .venv
+  ```
+  2. macOS / Linux:
+  ```bash
+  /usr/local/bin/python3.11 -m venv .venv
+  ```
+  Check the python version after activating the virtual environment to verify if it worked.
+
 ### 3. Configure VS Code to Use the Environment
 
 While VS Code is often smart enough to detect a newly created `.venv` folder, you should explicitly select the interpreter to ensure it uses the correct environment for running, debugging, and IntelliSense.
