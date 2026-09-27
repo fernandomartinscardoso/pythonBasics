@@ -1656,3 +1656,108 @@ Project of the day: [Birthday Wisher](/journey/day032_birthday_wisher/main.py).
 - [Running and Hosting Python Apps in the Cloud](https://www.pythonanywhere.com/)
 
 ---
+
+## Day 33
+
+Theme: How to develop a basic Application Programming Interface (API) using Python. 
+
+An **Application Programming Interface (API)** is a software intermediary that allows two distinct systems to talk to each other. It provides a standardized set of commands, functions, and protocols that developers can use to interact with an external system without needing to understand its internal workings.
+
+**The Waiter Analogy:** Think of an API as a waiter in a restaurant. You (the client) look at the menu (the documentation) and give the waiter your order (the request). The waiter takes your order to the kitchen (the server), waits for the food to be prepared, and then brings the meal (the response) back to your table.
+
+## HTTP Status Codes Explained
+
+When systems communicate via the web, the server replies with a three-digit HTTP status code. Your casual summary is a great memory hook; here is how those translate to technical definitions and common real-world examples:
+
+| Code Family | Casual Meaning | Technical Meaning | Common Example |
+| --- | --- | --- | --- |
+| **1XX (Informational)** | "Hold on" | The server received the request and is processing it. | `100 Continue` |
+| **2XX (Success)** | "Here you go" | The request was successfully received, understood, and accepted. | `200 OK` (Standard success response) |
+| **3XX (Redirection)** | "Go over there" | The requested resource has moved, and further action is required. | `301 Moved Permanently` |
+| **4XX (Client Error)** | "You screwed up" | The client sent a bad request (wrong URL, missing authentication, bad syntax). | `404 Not Found` (Typo in the URL) |
+| **5XX (Server Error)** | "I screwed up" | The server encountered an internal error and failed to fulfill a valid request. | `500 Internal Server Error` (Server crashed) |
+
+---
+
+## Python API Examples
+
+There are two sides to working with APIs: **consuming** an existing API (requesting data from it) and **developing** your own API (building the system that serves data).
+
+### 1. Consuming an API (Using `requests`)
+
+The `requests` library is the standard Python tool for sending HTTP requests to external systems.
+
+```python
+import requests
+
+# Send a GET request to a public API
+response = requests.get('https://api.github.com')
+
+# Evaluate the HTTP status code
+if response.status_code == 200: # "Here you go"
+    # Extract the data as a Python dictionary
+    data = response.json()
+    print("Success! Connected to GitHub.")
+    
+elif response.status_code == 404: # "You screwed up"
+    print("Error: The requested URL was not found.")
+    
+elif response.status_code >= 500: # "I screwed up"
+    print("Error: GitHub's servers are currently down.")
+
+```
+
+To avoid the conditional verification, the `raise_for_status()` method can be used. This method acts as an automatic alarm system for your HTTP requests. Instead of manually writing `if` statements to check if a request succeeded, you call this method immediately after making a request to ensure your program doesn't silently continue working with bad data.
+
+Without `raise_for_status()`, the requests library will not throw an error if you get a `404 Not Found` or a `500 Internal Server Error`. It assumes the request itself succeeded over the network, even if the server replied with an error code. If you try to parse the response as JSON when it actually contains a 404 HTML error page, your program will crash further down the line with a confusing JSON decode error.
+
+Here is the example of ISS location API using the `raise_for_status()` method:
+
+```python
+import requests
+
+response = requests.get(url="http://api.open-notify.org/iss-now.json")
+response.raise_for_status()
+
+data = response.json()
+
+longitude = data["iss_position"]["longitude"]
+latitude = data["iss_position"]["latitude"]
+
+iss_position = (latitude, longitude)
+print(iss_position)
+
+```
+
+
+### 2. Developing an API (Using `FastAPI`)
+
+While `requests` is used to *talk* to an API, building your own requires a web framework. **FastAPI** is a modern, fast Python library specifically designed for developing APIs.
+
+```python
+from fastapi import FastAPI
+import uvicorn
+
+# Initialize the API application
+app = FastAPI()
+
+# Define an endpoint (the URL path users will request)
+@app.get("/status")
+def get_system_status():
+    """
+    When a client sends a GET request to /status, 
+    the API will return a 200 OK code and this JSON response.
+    """
+    return {"status": "active", "version": "1.0.0"}
+
+# To run this code, you would execute this script and a local server would start.
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=8000)
+
+```
+
+### References
+
+- [Latitude and Longitude Finder](https://www.latlong.net/)
+- [Sunrise and Sunsite API](https://sunrise-sunset.org/api)
+- [ISS Now API](http://api.open-notify.org/iss-now.json)
