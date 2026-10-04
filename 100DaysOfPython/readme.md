@@ -1756,6 +1756,8 @@ if __name__ == "__main__":
 
 ```
 
+Project of the day: the [ISS Overhead App](/journey/day033_issoverhead/main.py).
+
 ### References
 
 - [Latitude and Longitude Finder](https://www.latlong.net/)

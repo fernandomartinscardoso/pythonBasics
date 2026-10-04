@@ -10,12 +10,14 @@ The program rechecks every 60 seconds to see if the conditions are met.'''
 import config
 from time import sleep
 
-MY_LAT = -5.139530 # Your latitude
-MY_LONG = 45.570392 # Your longitude
+MY_LAT = 48.137154 # Your latitude
+MY_LONG = 11.576124 # Your longitude
 
 while True:
+    print("Checking ISS position and darkness conditions...")
     if config.is_iss_overhead(MY_LAT, MY_LONG) and config.is_dark(MY_LAT, MY_LONG):
-        config.send_email("<receiver_email>@gmail.com", f"The ISS is currently overhead at {config.iss_position}. Look up!")
+        print("The ISS is overhead and it is dark. Sending email notification...")
+        config.send_email("<YOUR_EMAIL>@gmail.com", f"The ISS is currently overhead at {config.iss_position}. Look up!")
     else:
         print("The ISS is not overhead or it is not dark yet.")
         print(f"Current ISS position: {config.iss_position}")
