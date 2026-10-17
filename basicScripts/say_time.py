@@ -1,11 +1,18 @@
 """Speak the time."""
 
-__author__ = 'T.V. Raman <raman@google.com>'
-__copyright__ = 'Copyright (c) 2009, Google Inc.'
-__license__ = 'Apache License, Version 2.0'
+from datetime import datetime
 
-import androidhelper
-import time
+import pyttsx3
 
-droid = androidhelper.Android()
-droid.ttsSpeak(time.strftime("%I %M %p on %A, %B %e, %Y"))
+
+def main():
+    spoken_time = datetime.now().strftime('%I %M %p on %A, %B %d, %Y')
+    print(spoken_time)
+
+    engine = pyttsx3.init()
+    engine.say(spoken_time)
+    engine.runAndWait()
+
+
+if __name__ == '__main__':
+    main()

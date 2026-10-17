@@ -17,3 +17,9 @@ pandas
 # --- Utility ---
 # For creating command-line interfaces (CLIs) for test projects
 click
+
+# --- Text-to-Speech ---
+pyttsx3
+
+# --- Camera Capture ---
+opencv-python

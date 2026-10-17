@@ -1,11 +1,15 @@
-"""Speak user generated text."""
+"""Speak user generated text using pyttsx3."""
 
-__author__ = 'Damon Kohler <damonkohler@gmail.com>'
-__copyright__ = 'Copyright (c) 2009, Google Inc.'
-__license__ = 'Apache License, Version 2.0'
+import pyttsx3
 
-import androidhelper
 
-droid = androidhelper.Android()
-message = droid.dialogGetInput('TTS', 'What would you like to say?').result
-droid.ttsSpeak(message)
+def main():
+    message = input('What would you like to say? ')
+    if message.strip():
+        engine = pyttsx3.init()
+        engine.say(message)
+        engine.runAndWait()
+
+
+if __name__ == '__main__':
+    main()
