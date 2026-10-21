@@ -132,3 +132,5 @@ Next step: add speaker identification (diarization) to separate who said what in
 ## References
 
 [Pytranscript Lib](https://pypi.org/project/pytranscript/)
+[Vosk Models](https://alphacephei.com/vosk/models)
+
