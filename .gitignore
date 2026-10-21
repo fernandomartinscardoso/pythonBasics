@@ -19,4 +19,4 @@ __pycache__/
 *.wav
 *.mp3
 *.mp4
-vosk-model-*
+vosk-model/
