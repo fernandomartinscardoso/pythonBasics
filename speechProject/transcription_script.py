@@ -5,8 +5,8 @@ import json
 from vosk import Model, KaldiRecognizer
 
 # 1. Define paths
-MODEL_PATH = "vosk-model-small-en-us-0.15"  # Change this to your exact model folder name
-AUDIO_FILE = "<filename>_mono.wav"                    # Path to your audio file
+MODEL_PATH = "vosk-model/vosk-model-de-0.21"  # Change this to your exact model folder name
+AUDIO_FILE = "detest_mono.wav"                    # Path to your audio file
 
 if not os.path.exists(MODEL_PATH):
     print(f"Error: Model directory '{MODEL_PATH}' not found. Please download and extract it.")

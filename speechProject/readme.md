@@ -129,8 +129,26 @@ vosk-transcriber -n vosk-model-en-us-0.42-gigaspeech -i test.wav -o transcript.t
 
 Next step: add speaker identification (diarization) to separate who said what in the transcript.
 
+## Organizing a Transcript
+
+Run `organization_script.py` after transcription to restore capitalization and
+punctuation with the German `vosk-recasepunc-de-0.21` model. By default, it reads
+`transcript.txt` and writes `organized_transcript.txt` in the `speechProject`
+directory:
+
+```bash
+python -m pip install torch transformers regex tqdm
+python organization_script.py
+```
+
+The script loads `CasePuncPredictor` from the model's bundled `recasepunc.py`
+module and uses its `checkpoint`. To specify different input and output files:
+
+```bash
+python organization_script.py --input transcript.txt --output organized_transcript.txt
+```
+
 ## References
 
 [Pytranscript Lib](https://pypi.org/project/pytranscript/)
 [Vosk Models](https://alphacephei.com/vosk/models)
-
