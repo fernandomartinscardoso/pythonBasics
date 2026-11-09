@@ -7,8 +7,8 @@ import imageio_ffmpeg
 import pyttsx3
 
 
-INPUT_FILE = Path(__file__).with_name("chap3.txt")
-OUTPUT_FILE = Path(__file__).with_name("chap3.mp3")
+INPUT_FILE = Path(__file__).with_name("<file_name>.txt")
+OUTPUT_FILE = Path(__file__).with_name("<file_name>.mp3")
 SPEECH_RATE = 150
 
 
