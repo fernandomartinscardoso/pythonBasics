@@ -162,3 +162,40 @@ python basicScripts/take_picture.py
 ```
 
 In the preview window, press **Space** to capture the current frame, or **Q** or **Esc** to cancel. The script prints the full path of the saved image.
+
+---
+
+## 🔊 Convert a Text File to Speech (`text_to_speech.py`)
+
+Reads text from `<file_name>.txt`, speaks it with an installed English
+Windows voice, and saves the result as `<file_name>.mp3`. The script
+creates a temporary WAV file and uses FFmpeg (provided by `imageio-ffmpeg`) to
+encode the MP3.
+
+### 📋 Requirements
+
+This script is intended for Windows and requires an installed English speech
+voice. If no English voice is available, add one in **Settings > Time &
+language > Speech**.
+
+Install the basic-scripts dependencies from the repository root:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### 🚀 Usage
+
+Create a UTF-8 text file named `<file_name>.txt` in the `basicScripts` directory, then
+run the script from the repository root:
+
+```bash
+python text_to_speech.py
+```
+
+The script uses the first installed voice identified as English and sets the
+speech rate to 150. It writes `<file_name>.mp3` beside the input file, replacing an
+existing output after a successful conversion. The input file must exist and
+contain non-whitespace text.
+
+---
