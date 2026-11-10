@@ -198,4 +198,36 @@ speech rate to 150. It writes `<file_name>.mp3` beside the input file, replacing
 existing output after a successful conversion. The input file must exist and
 contain non-whitespace text.
 
+## 🌍 Convert Text to Speech in Other Languages (`text_to_speech_2.py`)
+
+This variant selects an installed system voice by language or locale. It defaults
+to German (`de-DE`) and can also select Brazilian Portuguese (`pt-BR`), provided
+that a matching voice is installed. It creates an MP3 using the same FFmpeg
+conversion process as `text_to_speech.py`.
+
+### 🚀 Usage
+
+Install the requirements from the repository root:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+From the repository root, pass the text file and desired voice language:
+
+```bash
+python basicScripts/text_to_speech_2.py --input beispiel.txt --language de-DE
+python basicScripts/text_to_speech_2.py --input exemplo.txt --language pt-BR
+```
+
+The output defaults to the input file with an `.mp3` extension. Override it with
+`--output`, for example `--output audio.mp3`. Other language codes and locales
+can be used when a corresponding system voice is installed.
+
+The script uses the first matching installed voice and sets the speech rate to
+150. If a requested voice is unavailable, it reports the voices that the speech
+engine detected. Install the desired language voice in the operating system
+before retrying. Long input is synthesized in bounded chunks. The input must be
+a UTF-8 text file with non-whitespace content.
+
 ---

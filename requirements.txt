@@ -20,6 +20,7 @@ click
 
 # --- Text-to-Speech ---
 pyttsx3
+imageio-ffmpeg
 
 # --- Camera Capture ---
 opencv-python
